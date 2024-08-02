@@ -1,0 +1,21 @@
+.footer{
+        height: 100Vh;
+        background-image: linear-gradient(to right, #434343 0%, black 100%);
+        color: ;
+}
+.footer ul {
+   padding: 0;
+}
+.footer ul li {
+    list-style: none;
+}
+.footer ul li a {
+    text-decoration: none;
+    color: rgb(194, 194, 194);
+    text-shadow: 1px 3px black;
+}
+
+.footer h4{
+    color:var( --colorText)
+}
+

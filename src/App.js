@@ -1,6 +1,8 @@
 import {  HashRouter, Route, Router, Routes } from "react-router-dom";
 import Home from "./pages/home/Home";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from "reactstrap";
 
 function App() {
   return (
@@ -15,7 +17,7 @@ function App() {
 
       </HashRouter>
 
-
+  
     </>
   );
 }
