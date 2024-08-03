@@ -5,28 +5,22 @@
 }
 .navbar a{
     color: white;
+    text-decoration: none;
+    margin-right: 10px;
 }
 
-.header{
- 
-  background-image: url('https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-men-s-luxury-watch-black-banner-image_182858.jpg');
-  background-size: cover;
-  height: 800px;
-    text-transform: uppercase;
-    font-size: 24px;
-    font-weight: 100;
-}
+
 .navbar-nav{
     margin: 0 auto;
 }
 .logo{
-    border-radius: 5px;
+
     width: 100px;
 }
 .nav-item{
     position: relative;
 }
-.nav-link::before{
+ .nav-item a::before{
     position: absolute;
     top: 98%;
     width: 0%;
@@ -36,11 +30,11 @@
     background-color: rgb(175, 175, 158);
     transition: 0.5s;
 }
-.nav-link:hover::before{
+a:hover::before{
     width: 100%;
     
 }
-.nav-link:hover.nav-link{
+a:hover{
     color: var(--colorText);
     
 } 

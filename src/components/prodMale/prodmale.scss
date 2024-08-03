@@ -1,0 +1,87 @@
+#container{
+        margin: 10px auto;
+    h1{
+        color: #3c3451;
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 32px;
+        margin-bottom: 16px;
+        padding-bottom: 25px;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        clear: both;
+        font-family: 'Roboto Slab', serif;
+    }
+    h1::before{
+        content: '';
+     
+        background-color: var(--colorText);
+        height: 5px;
+        border-radius: 5px;
+        width: 5%;
+        position: absolute;
+        margin: 0 auto;
+        bottom:  0px;
+        left: 10px;
+        right: 10px;
+       
+    }
+    .TTsp{
+        height: 380px;
+        margin: 5px 0px;
+        border: none;
+       text-align: center;
+       position: relative;
+      
+       z-index: 1;
+
+       a{
+        text-decoration: none;
+        color: black;
+    }
+    .card-title:hover{
+        color: var(--colorText);
+        
+    }
+            .card-title{
+               font-size: 14px;
+            }
+       .btn_add{
+        transform:translateY(15px)  ;
+        opacity: 0;
+        transition: 0.4s;
+        position: absolute;
+        bottom: 95px;
+        left: 10px;
+        Button{
+               background: none;
+                color: black;
+                border: none;
+        }
+       }
+       .card_img{
+        height: 250px;
+        z-index: -10;
+        overflow: hidden;
+         img{
+            transition: 1s;
+         }
+       }
+    }
+    .TTsp:hover  img{
+        transform: scale(1.1);
+       
+    }
+    .TTsp:hover .btn_add{
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    .TTsp:hover{
+       outline: 1px dashed rgb(177, 177, 177);
+
+    }
+   
+    
+    
+}

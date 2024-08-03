@@ -1,0 +1,32 @@
+#footer{
+    height: 100Vh;
+background-color: black;
+    color:#a4a4a4;
+    padding-top: 30px;
+
+    .form_footer{
+        border: 1px dashed rgb(177, 177, 177) ;
+        border-bottom: none;
+        border-top: none;
+    }
+ 
+        ul{
+           
+            padding: 0;
+            li{
+                list-style: none;
+              
+                a{
+                    text-decoration: none;
+                    color:#a4a4a4;
+                
+                }
+            }
+        }
+       
+      
+
+        h4{
+            color:var( --colorText)
+        }
+}

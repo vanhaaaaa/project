@@ -1,0 +1,22 @@
+#num{
+    background-image: url('https://mauweb.monamedia.net/dongho/wp-content/uploads/2018/03/movement-gears-background.jpg');
+
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    height: 300px;
+    .bg-overlay{
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    }
+    .container{
+        position: relative;
+    }
+}

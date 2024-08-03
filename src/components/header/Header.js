@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Collapse,
   Navbar,
@@ -18,15 +18,23 @@ import {
   CarouselControl,
   CarouselIndicators,
   CarouselCaption,
+
+  Button,
 } from 'reactstrap';
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import "./header.css";
+import "./header.scss";
 import logo from "../../assets/logo.png"
-
-
+import slide1 from "../../assets/slide1.jpg"
+import slide2 from "../../assets/slide2.jpg"
+import slide3 from "../../assets/slide3.jpg"
+import { Link } from 'react-router-dom';
+import { Typography } from 'antd';
+import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
+import SearchIcon from '@mui/icons-material/Search';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -44,137 +52,142 @@ export default function Header() {
   const [animating, setAnimating] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
+
+  
   const toggle = () => setIsOpen(!isOpen);
   const items = [
     {
-      src: 'https://dangquangwatch.vn/upload/product_small/Dong-ho-Thuy-Sy-E-3501139251535-1795494729.jpg',
+      src: slide1,
       altText: 'Đồng hồ Philippe Auguste Tourbillon PA8668 Limited',
-      caption: '12.670.000đ',
-      key: 1,
+
     },
     {
-      src: 'https://dangquangwatch.vn/upload/product_small/dong-ho-rong-phien-ban-gioi-han1-744753900.jpg',
+      src: slide2,
       altText: 'Đồng hồ Epos Swiss E-',
-      caption: '69.000.000đ',
-      key: 2,
+
     },
     {
-      src: 'https://dangquangwatch.vn/upload/product_small/dong-ho-cao-cap-rong-85762207.jpg',
+      src: slide3,
       altText: 'Đồng hồ Atlantic Swiss AT-',
-      caption: '8.225.000đ',
-      key: 3,
+
     },
   ];
-  
-  
+
+
   const next = () => {
     if (animating) return;
     const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
   };
-  
+
   const previous = () => {
     if (animating) return;
     const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
     setActiveIndex(nextIndex);
   };
-  
+
   const goToIndex = (newIndex) => {
     if (animating) return;
     setActiveIndex(newIndex);
   };
-  
+
   const slides = items.map((item) => {
     return (
       <CarouselItem
+
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
         key={item.src}
       >
         <img src={item.src} alt={item.altText} />
-        <CarouselCaption 
-          captionText={item.caption}
-          captionHeader={item.altText}
-        />
+
       </CarouselItem>
     );
   });
+  const HtmlTooltip = styled(({ className, ...props }) => (
+    <Tooltip {...props} classes={{ popper: className }} />
+  ))(({ theme }) => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+      backgroundColor: '#f5f5f9',
+      color: 'rgba(0, 0, 0, 0.87)',
+      maxWidth: 220,
+      fontSize: theme.typography.pxToRem(12),
+      border: '1px solid #dadde9',
+    },
+  }));
+  useEffect(()=>{
+
+  },[])
   return (
     <>
 
-      <div className='header'>
-        <Container>
-          <Navbar className='menu_header' expand="md">
-            <NavbarBrand href="/"><img className='logo' src={logo} /></NavbarBrand>
+      <div id='header'>
 
-            <NavbarToggler onClick={toggle} />
-            <Collapse isOpen={isOpen} navbar>
-              <Nav className="me-auto" navbar>
-                <NavItem>
-                  <NavLink href="/">Home</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/">product</NavLink>
-                </NavItem>
-              
-                <UncontrolledDropdown nav inNavbar>
-                  <DropdownToggle nav caret>
-                    Options
-                  </DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem>Option 1</DropdownItem>
-                    <DropdownItem>Option 2</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Reset</DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
-              </Nav>
+        <Navbar className='menu_header' expand="md">
+          <NavbarBrand >  <Link to={"/"}><img className='logo' src={logo} /> </Link></NavbarBrand>
+
+          <NavbarToggler onClick={toggle} />
+          <Collapse isOpen={isOpen} navbar>
+            <Nav className="me-auto" navbar>
+              <NavItem>
+                <Link to={"/"}>Home</Link>
+              </NavItem>
+              <NavItem>
+                <Link to={"/products"}>products</Link>
+              </NavItem>
+              <NavItem>
+                <Link to={"/contact"}>contact</Link>
+              </NavItem>
+
+            </Nav>
 
 
-
-
-            </Collapse>
             <div className='box'>
 
               <Input type='text' placeholder='ban muon mua gi?' />
-
+                        <span><SearchIcon /></span>
             </div>
-
-
             <div>
               <IconButton aria-label="cart" color="light">
                 <StyledBadge badgeContent={4} color="white">
-                  <ShoppingCartIcon />
+            <ShoppingCartIcon />
                 </StyledBadge>
               </IconButton>
             </div>
-          </Navbar>
+           
+             
+          </Collapse>
+
+
+         
+
+        </Navbar>
 
 
 
-        <div className='slider p-2'>
+        <div className='slider'>
 
           {
-             <Carousel
-             activeIndex={activeIndex}
-             next={next}
-             previous={previous}
+            <Carousel
+              activeIndex={activeIndex}
+              next={next}
+              previous={previous}
               fade={true}
-           >
-            
-             {slides}
-          
-           
-           </Carousel>
+            >
+
+              {slides}
+
+
+            </Carousel>
           }
         </div>
 
-        </Container>
+
 
 
       </div>
 
-     
+
 
 
     </>

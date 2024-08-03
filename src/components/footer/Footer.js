@@ -1,14 +1,15 @@
 import React from 'react'
-import "./footer.css";
+import "./footer.scss";
 import { Col, Container, Row } from 'reactstrap';
+import logo from "../../assets/logo.png"
 export default function Footer() {
   return (
-    <div className='footer'>
+    <div id='footer'>
 <Container>
 <Row>
 
 
-<Col lg={3} md={4} xs={12}>
+<Col lg={3} md={4} xs={12} className='text-end'>
 <h4>Thông tin chung</h4>
 <ul>
 
@@ -19,30 +20,16 @@ export default function Footer() {
 </ul>
 </Col>
 
-<Col lg={3} md={4} xs={12}>
-<h4>Hỗ trợ khách hàng</h4>
-<ul>
+<Col lg={6} md={4} xs={12} className='form_footer text-center'>
 
-  <li><a  href='/'>Chính sách & Quy định chung</a>  </li>
-  <li><a  href='/'>Chính sách bảo mật thông tin khách hàng</a> </li>
-  <li><a  href='/'>Chính sách xử lý dữ liệu cá nhân</a> </li>
-  <li><a  href='/'>Chính sách bảo hành</a> </li>
-  <li><a  href='/'>Chính sách vận chuyển</a> </li>
+    <img src={logo} width={"100px"} />
 
-</ul>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ad.</p>
 </Col>
 
 
-<Col lg={3} md={4} xs={12}>
-<h4>Hệ thống cửa hàng</h4>
-<ul>
 
-  <li><a href='/'></a> </li>
-  <li><a href='/'></a>  </li>
-  <li><a href='/'></a>  </li>
-
-</ul>
-</Col>
 <Col lg={3} md={4} xs={12}>
 <h4>Kết nối</h4>
 <ul>
