@@ -15,11 +15,14 @@
 }
 .logo{
 
-    width: 100px;
+    width: 70px;
 }
 .nav-item{
     position: relative;
+    border-right: dashed;
+    margin-right: 15px;
 }
+
  .nav-item a::before{
     position: absolute;
     top: 98%;
@@ -31,7 +34,7 @@
     transition: 0.5s;
 }
 a:hover::before{
-    width: 100%;
+    width: 90%;
     
 }
 a:hover{

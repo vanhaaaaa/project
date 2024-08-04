@@ -1,0 +1,58 @@
+
+.TTsp{
+    height: 380px;
+    margin: 5px 0px;
+    border: none;
+   text-align: center;
+   position: relative;
+  
+   z-index: 1;
+
+   a{
+    text-decoration: none;
+    color: black;
+}
+.card-title:hover{
+    color: var(--colorText);
+    
+}
+        .card-title{
+           font-size: 14px;
+        }
+   .btn_add{
+    transform:translateY(15px)  ;
+    opacity: 0;
+    transition: 0.4s;
+    position: absolute;
+    bottom: 95px;
+    left: 10px;
+    Button{
+           background: none;
+            color: black;
+            border: none;
+    }
+   }
+   .card_img{
+    height: 250px;
+    z-index: -10;
+    overflow: hidden;
+     img{
+        transition: 1s;
+     }
+   }
+}
+.TTsp:hover  img{
+    transform: scale(1.1);
+   
+}
+.TTsp:hover .btn_add{
+    transform: translateY(-10px);
+    opacity: 1;
+}
+.TTsp:hover{
+   outline: 1px dashed rgb(177, 177, 177);
+
+}
+
+
+

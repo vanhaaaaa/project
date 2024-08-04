@@ -1,46 +1,18 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { Button, Card, CardBody, CardSubtitle, CardText, CardTitle, Col, Container, Nav, Navbar, NavbarBrand, Row } from 'reactstrap';
-import { fetchApi } from '../../redux/productSlice';
-import './prodmale.scss';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Button, Card, CardBody, CardSubtitle, CardTitle, Col } from 'reactstrap'
 import AddShoppingCartRoundedIcon from '@mui/icons-material/AddShoppingCartRounded';
+import './product.scss';
 import ScrollAnimation from 'react-animate-on-scroll';
-import { Link } from 'react-router-dom';
-export default function ProdMale() {
-
-    const dispatch = useDispatch();
-
-
-    const { items, status, error } = useSelector(state => state.products)
-    useEffect(() => {
-        if (status === 'start') {
-            dispatch(fetchApi());
-        }
-
-    }, []);
-
-
-    const prodMale =  items.filter(item => item.sex == "nam")
+export default function Product(props) {
+    const {item,index} =props
   return (
-    
-    <>
-     <Container  id='container'>
-               
-                      
-
-    
-    
-                   <h1 className='text-center' >Đồng Hồ Nam</h1>
-                   <ScrollAnimation    animateIn='fadeIn'   initiallyVisible={true}
+<>
+         <Col lg={4} md={6} xs={6} >
+         <ScrollAnimation    animateIn='fadeIn'   initiallyVisible={true}
   animateOnce={true}>
-                   <Row  >
+         <Card className='TTsp'>
             
-                   {
-                            prodMale.map((item, index) =>
-                             
-                                <Col  xs={6} sm={6} md={4} lg={3} >
-                                
-                                <Card className='TTsp'>
                                     <div className='card_img' >
                                     <img height={"100%"}
                                     width={"100%"}
@@ -53,8 +25,8 @@ export default function ProdMale() {
                                     <CardSubtitle
                                             className="mb-2 text-muted text-uppercase fw-light"
                                             tag="h7"
-                                        >
-                                          Đồng Hồ Nam
+                                        >   
+                                {item.sex}
                                         </CardSubtitle>
                                         <CardTitle tag="h6">
                                               {item.name}
@@ -76,17 +48,9 @@ export default function ProdMale() {
                                     </CardBody>
                                     <div key={index}></div>
                                 </Card>
-                                
+
+                                </ScrollAnimation>
                                 </Col>
-                             
-                            )}
-                           
-
-
-                   </Row>
-                   </ScrollAnimation>
-           </Container>
-    
-    </>
+                                </>
   )
 }

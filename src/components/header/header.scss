@@ -6,11 +6,20 @@
     font-size: 24px;
     font-weight: 100;
             .menu_header{
-                    position: absolute;
+                    position: fixed;
                     top: 0;
-                    right: 50px;
-                    left: 50px;
+                    right:0px;
+                    left: 0px;
                     z-index: 100;
+                    padding: 0px 80px;
+                    transition: 1s;
+
+            }
+            .menu_header.active{
+         
+              z-index: 100;
+              background-color: rgba(0, 0, 0);
+              color:#a4a4a4 ;
             }
             .slider{
                 width: 100%;

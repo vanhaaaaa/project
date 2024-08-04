@@ -51,7 +51,7 @@ export default function Header() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-
+  const [navbarBg,setNavbar]=useState(false);
 
   
   const toggle = () => setIsOpen(!isOpen);
@@ -117,13 +117,27 @@ export default function Header() {
   }));
   useEffect(()=>{
 
-  },[])
+  },[]);
+
+
+  const changeBg =()=>{
+    console.log(window.scrollY);
+    if(window.scrollY>=100){
+      setNavbar(true);
+       
+      
+    }else{
+      setNavbar(false);
+    }
+  }
+
+  window.addEventListener('scroll',changeBg);
   return (
     <>
 
       <div id='header'>
 
-        <Navbar className='menu_header' expand="md">
+        <Navbar className={navbarBg ? "menu_header active ":"menu_header"} expand="md">
           <NavbarBrand >  <Link to={"/"}><img className='logo' src={logo} /> </Link></NavbarBrand>
 
           <NavbarToggler onClick={toggle} />
@@ -135,7 +149,7 @@ export default function Header() {
               <NavItem>
                 <Link to={"/products"}>products</Link>
               </NavItem>
-              <NavItem>
+              <NavItem >
                 <Link to={"/contact"}>contact</Link>
               </NavItem>
 
