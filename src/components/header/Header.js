@@ -51,9 +51,9 @@ export default function Header() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [navbarBg,setNavbar]=useState(false);
+  const [navbarBg, setNavbar] = useState(false);
 
-  
+
   const toggle = () => setIsOpen(!isOpen);
   const items = [
     {
@@ -115,29 +115,30 @@ export default function Header() {
       border: '1px solid #dadde9',
     },
   }));
-  useEffect(()=>{
+  useEffect(() => {
 
-  },[]);
+  }, []);
 
 
-  const changeBg =()=>{
+  const changeBg = () => {
     console.log(window.scrollY);
-    if(window.scrollY>=100){
+    if (window.scrollY >= 300) {
       setNavbar(true);
-       
-      
-    }else{
+
+
+    } else {
       setNavbar(false);
     }
   }
 
-  window.addEventListener('scroll',changeBg);
+  window.addEventListener('scroll', changeBg);
+
   return (
     <>
 
       <div id='header'>
 
-        <Navbar className={navbarBg ? "menu_header active ":"menu_header"} expand="md">
+        <Navbar className={navbarBg ? "menu_header active " : "menu_header"} expand="md">
           <NavbarBrand >  <Link to={"/"}><img className='logo' src={logo} /> </Link></NavbarBrand>
 
           <NavbarToggler onClick={toggle} />
@@ -152,6 +153,9 @@ export default function Header() {
               <NavItem >
                 <Link to={"/contact"}>contact</Link>
               </NavItem>
+              <NavItem >
+                <Link to={"/contact"}>   discover</Link>
+              </NavItem>
 
             </Nav>
 
@@ -159,21 +163,21 @@ export default function Header() {
             <div className='box'>
 
               <Input type='text' placeholder='ban muon mua gi?' />
-                        <span><SearchIcon /></span>
+              <span><SearchIcon /></span>
             </div>
             <div>
               <IconButton aria-label="cart" color="light">
                 <StyledBadge badgeContent={4} color="white">
-            <ShoppingCartIcon />
+                  <ShoppingCartIcon />
                 </StyledBadge>
               </IconButton>
             </div>
-           
-             
+
+
           </Collapse>
 
 
-         
+
 
         </Navbar>
 
@@ -188,11 +192,16 @@ export default function Header() {
               previous={previous}
               fade={true}
             >
-
+              <CarouselIndicators
+                items={items}
+                activeIndex={activeIndex}
+                onClickHandler={goToIndex}
+              />
               {slides}
 
 
             </Carousel>
+
           }
         </div>
 

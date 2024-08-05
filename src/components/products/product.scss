@@ -1,58 +1,130 @@
-
-.TTsp{
+.TTsp {
     height: 380px;
     margin: 5px 0px;
     border: none;
-   text-align: center;
-   position: relative;
-  
-   z-index: 1;
+    text-align: center;
+    position: relative;
 
-   a{
-    text-decoration: none;
-    color: black;
-}
-.card-title:hover{
-    color: var(--colorText);
-    
-}
-        .card-title{
-           font-size: 14px;
-        }
-   .btn_add{
-    transform:translateY(15px)  ;
-    opacity: 0;
-    transition: 0.4s;
-    position: absolute;
-    bottom: 95px;
-    left: 10px;
-    Button{
-           background: none;
+    z-index: 1;
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .card-title:hover {
+        color: var(--colorText);
+
+    }
+
+    .card-title {
+        font-size: 14px;
+    }
+
+    .btn_add {
+        transform: translateY(15px);
+        opacity: 0;
+        transition: 0.4s;
+        position: absolute;
+        bottom: 95px;
+        left: 10px;
+
+        Button {
+            background: none;
             color: black;
             border: none;
+        }
     }
-   }
-   .card_img{
-    height: 250px;
-    z-index: -10;
-    overflow: hidden;
-     img{
-        transition: 1s;
-     }
-   }
+
+    .card_img {
+      
+        overflow: hidden;
+
+        img {
+            width: 85%;
+            transition: 0.5s all ease !important;
+            height: auto;
+      
+            transition: 1s;
+        }
+    }
 }
-.TTsp:hover  img{
+
+.TTsp:hover img {
     transform: scale(1.1);
-   
+
 }
-.TTsp:hover .btn_add{
+
+.TTsp:hover .btn_add {
     transform: translateY(-10px);
     opacity: 1;
 }
-.TTsp:hover{
-   outline: 1px dashed rgb(177, 177, 177);
+
+.TTsp:hover {
+    outline: 1px dashed rgb(177, 177, 177);
 
 }
 
+.category_prod {
+    ul {
+        display: flex;
 
+        li {
+            list-style: none;
+        }
+    }
 
+    .category_prod_img {
+
+    
+        margin-left: 5px;
+        text-align: center;
+
+        border-radius: 5px;
+
+        button {
+            background-color: #fff;
+            margin: 5px;
+            height: 60px;
+            width: 90px;
+            border: none;
+            box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+
+            img {
+                width: 100%;
+                z-index: 100;
+
+            }
+        }
+
+        button:hover {
+            z-index: -100;
+            border: 1px solid greenyellow;
+        }
+       
+    }
+
+  
+       
+        
+    
+}
+
+.navbar{
+
+    .nav-item{
+        .btn-secondary{
+            background-color: #fff;
+            color: black;
+            width: 100%;
+            margin: 5px 0px;
+            font-size: 17px;
+            border: none;
+            box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+        }
+    }
+        .navbar-toggler:focus{
+            box-shadow: none;
+            
+        }
+}

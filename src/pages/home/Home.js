@@ -6,6 +6,7 @@ import ProdFemale from '../../components/prodMale/ProdFemale'
 import Section1 from '../../components/section/Section1'
 
 export default function Home() {
+   document.title = "AW Home"
   return (
     <div>
      

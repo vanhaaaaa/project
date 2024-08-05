@@ -1,4 +1,4 @@
- .navbar-expand-md{
+ /* .navbar-expand-md{
    position: fixed;
 
 
@@ -40,28 +40,5 @@ a:hover::before{
 a:hover{
     color: var(--colorText);
     
-} 
+}  */
 
-
-
-.MuiBadge-root{
-    color: var(--colorText);
-}
-.slider{
-    width: 50%;
-    margin: 0 auto;
-    float: right;
-
-}
-.slider img{
-    margin-right: 60px;
-}
-.carousel-control-prev{
-    display: none;
-}
-.carousel-caption  {
-        margin-left: 150px;
-    color: var(--colorText);
-    font-size: 24px;
-    text-align: end;
-}
