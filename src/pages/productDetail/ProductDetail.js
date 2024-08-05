@@ -21,9 +21,10 @@ export default function ProductDetail() {
         console.log(error)
       })
     }
+   
   return (
    <>
-        <Header/>
+        <Header />
 
 
         <div>

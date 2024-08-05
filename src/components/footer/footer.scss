@@ -29,4 +29,27 @@ background-color: black;
         h4{
             color:var( --colorText)
         }
+        .ip_footer{
+           
+            width: 60%;
+            margin: 0 auto;
+            position: relative;
+  
+            input{
+                border: none;
+                opacity: 0.8;
+                border-radius: 25px;
+                color: #a4a4a4;
+                &:focus{
+                        box-shadow: none;
+                }
+            }
+            span{
+                position: absolute;
+                top: 5px;
+                right: 10px;
+                        padding-left: 3px;
+                border-left: 2px solid black;
+            }
+        }
 }

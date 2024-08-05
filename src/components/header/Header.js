@@ -32,9 +32,10 @@ import slide1 from "../../assets/slide1.jpg"
 import slide2 from "../../assets/slide2.jpg"
 import slide3 from "../../assets/slide3.jpg"
 import { Link } from 'react-router-dom';
-import { Typography } from 'antd';
+
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import SearchIcon from '@mui/icons-material/Search';
+import { Height } from '@mui/icons-material';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -120,25 +121,31 @@ export default function Header() {
   }, []);
 
 
+
   const changeBg = () => {
-    console.log(window.scrollY);
-    if (window.scrollY >= 300) {
+
+    if (window.scrollY >= 500 && document.title == "AW Home") {
       setNavbar(true);
 
 
-    } else {
+    } else if ( document.title != "AW Home") {
+      setNavbar(true);
+    }
+    else {
       setNavbar(false);
     }
   }
 
   window.addEventListener('scroll', changeBg);
 
+
+ 
   return (
     <>
 
-      <div id='header'>
+      <div id="header">
 
-        <Navbar className={navbarBg ? "menu_header active " : "menu_header"} expand="md">
+        <Navbar className={document.title == "AW Home" ?    navbarBg ? "menu_header active " : "menu_header" : "menu_header active " } expand="md">
           <NavbarBrand >  <Link to={"/"}><img className='logo' src={logo} /> </Link></NavbarBrand>
 
           <NavbarToggler onClick={toggle} />
@@ -182,10 +189,12 @@ export default function Header() {
         </Navbar>
 
 
-
+        {
+              document.title == "AW Home"?
         <div className='slider'>
 
-          {
+        
+
             <Carousel
               activeIndex={activeIndex}
               next={next}
@@ -200,12 +209,18 @@ export default function Header() {
               {slides}
 
 
-            </Carousel>
-
-          }
+            </Carousel> 
         </div>
 
+:
+<div style={{height: 100 + 'px'}}>
 
+        
+
+
+</div>
+
+          }
 
 
       </div>

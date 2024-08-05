@@ -1,7 +1,8 @@
 import React from 'react'
 import "./footer.scss";
-import { Col, Container, Row } from 'reactstrap';
+import { Col, Container, Input, Row } from 'reactstrap';
 import logo from "../../assets/logo.png"
+import SearchIcon from '@mui/icons-material/Search';
 export default function Footer() {
   return (
     <div id='footer'>
@@ -26,6 +27,11 @@ export default function Footer() {
 
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ad.</p>
+<div className='ip_footer'>
+    <Input type='text' />
+    <span><SearchIcon /></span>
+    </div>
+    <p className='mt-2'>hãy gửi phản hồi vủa bạn về chúng tôi</p>
 </Col>
 
 
@@ -33,12 +39,14 @@ export default function Footer() {
 <Col lg={3} md={4} xs={12}>
 <h4>Kết nối</h4>
 <ul>
-
+<li><a  href='/'>Chính sách bảo hành</a> </li>
+<li><a  href='/'>Chính sách vận chuyển</a> </li>
 <li><a  href='/'>Chính sách & Quy định chung</a>  </li>
+<li><a  href='/'>Chính sách xử lý dữ liệu cá nhân</a> </li>
   <li><a  href='/'>Chính sách bảo mật thông tin khách hàng</a> </li>
-  <li><a  href='/'>Chính sách xử lý dữ liệu cá nhân</a> </li>
-  <li><a  href='/'>Chính sách bảo hành</a> </li>
-  <li><a  href='/'>Chính sách vận chuyển</a> </li>
+ 
+ 
+
 
 </ul>
 </Col>

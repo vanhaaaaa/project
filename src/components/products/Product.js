@@ -23,7 +23,7 @@ export default function Product(props) {
                             <Link>
                                 <CardSubtitle
                                     className="  text-muted  text-uppercase fw-light"
-                                    tag="h7"
+                                    tag="h6"
                                 >
                                     {item.sex}
                                 </CardSubtitle>

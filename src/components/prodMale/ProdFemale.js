@@ -39,7 +39,7 @@ export default function ProdFemale() {
                    {
                             prodMale.map((item, index) =>
                              
-                                <Col xs={6} sm={6} md={4} lg={3} >
+                                <Col xs={6} sm={6} md={4} lg={3} key={index} >
                                 
                                 <Card className='TTsp'>
                                     <div className='card_img' >
@@ -52,7 +52,7 @@ export default function ProdFemale() {
                                     <CardBody className='mt-2'>
                                     <CardSubtitle
                                             className="mb-2 text-muted text-uppercase fw-light "
-                                            tag="h7"
+                                            tag="h6"
                                         >
                                             Đồng Hồ Nữ
                                         </CardSubtitle>
@@ -72,7 +72,7 @@ export default function ProdFemale() {
                                         </Button>
                                         </div>
                                     </CardBody>
-                                    <div key={index}></div>
+                                
                                 </Card>
                                 
                                 </Col>

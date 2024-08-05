@@ -50,8 +50,8 @@ export default function Products() {
         </div>
 
           </div>
- <Navbar  onClick={toggleNavbar} color="faded" >
-            <h5  style={{marginLeft: -10 + 'px'}}>gender</h5>
+ <Navbar   color="faded" >
+            <h5 onClick={toggleNavbar} style={{marginLeft: -10 + 'px'}}>gender</h5>
         <ArrowDropDownCircleSharpIcon onClick={toggleNavbar} className="me-2" />
         <Collapse isOpen={collapsed} navbar>
           <Nav navbar>

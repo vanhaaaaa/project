@@ -8,13 +8,13 @@ import Section1 from '../../components/section/Section1'
 export default function Home() {
    document.title = "AW Home"
   return (
-    <div>
+ <>
      
         <Header/>
       <ProdMale/>
       <Section1/>
       <ProdFemale/>
         <Footer/>
-    </div>
+        </>
   )
 }

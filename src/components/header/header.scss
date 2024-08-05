@@ -1,74 +1,87 @@
 #header {
-  .navbar-expand-md{
-    position: fixed;
- 
 
-.MuiBadge-root{
-  color: var(--colorText);
-}
-.slider{
-  width: 50%;
-  margin: 0 auto;
-  float: right;
-
-}
-.slider img{
-  margin-right: 60px;
-}
-.carousel-control-prev{
-  display: none;
-}
-.carousel-caption  {
-      margin-left: 150px;
-  color: var(--colorText);
-  font-size: 24px;
-  text-align: end;
-}
- 
- }
- .navbar a{
-     color: white;
-     text-decoration: none;
-     margin-right: 10px;
- }
- 
- 
- .navbar-nav{
-     margin: 0 auto;
- }
- .logo{
- 
-     width: 70px;
- }
- .nav-item{
-     position: relative;
-     border-right: dashed;
-     margin-right: 15px;
- }
- 
-  .nav-item a::before{
-     position: absolute;
-     top: 98%;
-     width: 0%;
-     content: '';
-     height: 2px;
-     left: 0%;
-     background-color: rgb(175, 175, 158);
-     transition: 0.5s;
- }
- a:hover::before{
-     width: 90%;
-     
- }
- a:hover{
-     color: var(--colorText);
-     
- } 
   background-size: cover;
-  height: 890px;
+  height: auto;
   text-transform: uppercase;
   font-size: 24px;
   font-weight: 100;
+  margin-bottom: 20px;
+  .navbar-expand-md {
+    position: fixed;
+
+
+    .MuiBadge-root {
+      color: var(--colorText);
+    }
+
+    .slider {
+      width: 50%;
+      margin: 0 auto;
+      float: right;
+
+    }
+
+    .slider img {
+      margin-right: 60px;
+    }
+
+    .carousel-control-prev {
+      display: none;
+    }
+
+    .carousel-caption {
+      margin-left: 150px;
+      color: var(--colorText);
+      font-size: 24px;
+      text-align: end;
+    }
+
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+
+
+  .navbar-nav {
+    margin: 0 auto;
+  }
+
+  .logo {
+
+    width: 70px;
+  }
+
+  .nav-item {
+    position: relative;
+    border-right: dashed;
+    margin-right: 15px;
+  }
+
+  .nav-item a::before {
+    position: absolute;
+    top: 98%;
+    width: 0%;
+    content: '';
+    height: 2px;
+    left: 0%;
+    background-color: rgb(175, 175, 158);
+    transition: 0.5s;
+  }
+
+  a:hover::before {
+    width: 90%;
+
+  }
+
+  a:hover {
+    color: var(--colorText);
+
+  }
+
+ 
 
   .menu_header {
     position: fixed;
