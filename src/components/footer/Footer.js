@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./footer.scss";
-import { Col, Container, Input, Row } from 'reactstrap';
+import { Button, Col, Container, Input, Row } from 'reactstrap';
 import logo from "../../assets/logo.png"
 import SearchIcon from '@mui/icons-material/Search';
+import NorthIcon from '@mui/icons-material/North';
 export default function Footer() {
+
+
+  useEffect(() => {
+   
+  }, []);
+  const scrollTop = () =>{   window.scrollTo({top: 0, behavior: 'smooth'});};
+
+
+
+
+  
+  
   return (
     <div id='footer'>
 <Container>
@@ -54,7 +67,7 @@ export default function Footer() {
 </Row>
 
 
-
+<Button onClick={()=>scrollTop()} ><NorthIcon/></Button>
 
 
 

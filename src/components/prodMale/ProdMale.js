@@ -39,7 +39,7 @@ export default function ProdMale() {
                             prodMale.map((item, index) =>
                              
                                 <Col  xs={6} sm={6} md={4} lg={3}  key={index}>
-                                
+                                  <Link to={`/detail/${item.id}` } className='add_prod' >
                                 <Card className='TTsp'>
                                     <div className='card_img' >
                                     <img height={"100%"}
@@ -49,7 +49,7 @@ export default function ProdMale() {
                                     />
                                     </div>
                                     <CardBody className='mt-2'>
-                                    <Link>
+                                 
                                     <CardSubtitle
                                             className="mb-2 text-muted text-uppercase fw-light"
                                             tag="h6"
@@ -60,23 +60,24 @@ export default function ProdMale() {
                                               {item.name}
                                          
                                         </CardTitle>
-                                        </Link>
+                                       
                                         <CardSubtitle
                                             className="mb-2 text-muted"
                                             tag="h6"
                                         >
                                              {item.price}
                                         </CardSubtitle>
-                                       
+                                       <Link>
                                        <div className='btn_add'>
                                         <Button >
                                          <AddShoppingCartRoundedIcon/>
                                         </Button>
                                         </div>
+                                        </Link>
                                     </CardBody>
                                  
                                 </Card>
-                                
+                                </Link>
                                 </Col>
                              
                             )}

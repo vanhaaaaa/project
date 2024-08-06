@@ -20,9 +20,11 @@ export default function Products() {
   useEffect(() => {
     if (status === 'start') {
       dispatch(fetchApi());
+
     }
 
   }, []);
+
 
   return (
     <>

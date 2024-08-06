@@ -35,7 +35,7 @@ import { Link } from 'react-router-dom';
 
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import SearchIcon from '@mui/icons-material/Search';
-import { Height } from '@mui/icons-material';
+
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -117,7 +117,7 @@ export default function Header() {
     },
   }));
   useEffect(() => {
-
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }, []);
 
 
@@ -126,7 +126,7 @@ export default function Header() {
 
     if (window.scrollY >= 500 && document.title == "AW Home") {
       setNavbar(true);
-
+     
 
     } else if ( document.title != "AW Home") {
       setNavbar(true);

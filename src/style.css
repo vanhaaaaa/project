@@ -5,9 +5,8 @@
 
 
 
-
 :root{
     --colorText:#e2ba48;
     --main-color: rgb(194, 194, 194);;
-
+        --colorBg: #a4a4a4;
 }

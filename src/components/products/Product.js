@@ -8,7 +8,10 @@ export default function Product(props) {
     const { item, index } = props
     return (
         <>
+
+
             <Col lg={4} md={6} xs={6} >
+            <Link to={`/detail/${item.id}` } className='add_prod' > 
                 <ScrollAnimation animateIn='flipInY' initiallyVisible={true}
                     animateOnce={true}>
                     <Card className='TTsp'>
@@ -20,7 +23,7 @@ export default function Product(props) {
                             />
                         </div>
                         <CardBody className=''>
-                            <Link>
+                           
                                 <CardSubtitle
                                     className="  text-muted  text-uppercase fw-light"
                                     tag="h6"
@@ -31,25 +34,28 @@ export default function Product(props) {
                                     {item.name}
 
                                 </CardTitle>
-                            </Link>
+                          
                             <CardSubtitle
                                 className=" text-muted mt-2"
                                 tag="h6"
                             >
                                 {item.price}
                             </CardSubtitle>
-
+            <Link>
                             <div className='btn_add'>
-                                <Button >       <Link to={`/detail/${item.id}`}>   <AddShoppingCartRoundedIcon /></Link>
+                                <Button onClick={()=>alert("asd")} >       <AddShoppingCartRoundedIcon />
 
                                 </Button>
                             </div>
+                            </Link>
                         </CardBody>
                         <div key={index}></div>
                     </Card>
 
                 </ScrollAnimation>
+                </Link>
             </Col>
+        
         </>
     )
 }

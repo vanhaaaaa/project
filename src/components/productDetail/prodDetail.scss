@@ -1,0 +1,94 @@
+#prod_detail {
+    padding: 0px 10%;
+
+    .row {
+        .prod_left {
+            display: flex;
+            justify-content: space-evenly;
+
+            .prod_left_img {
+                width: 60%;
+                transition: 2s;
+
+            }
+
+            .prod_img {
+              
+                padding: 5%;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .prod_carosel {
+            justify-content: space-evenly;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            button {
+                padding: 0;
+                border: none;
+                background: #fff;
+
+                &:focus  {
+                    border-color: var(--colorText);
+                    opacity: 0.8;
+
+                }
+                &:hover{
+                    opacity: 0.8;
+                }
+                &.acitve {
+                    display: none;
+                }
+
+                img {
+                    padding: 5%;
+                    width: 100%;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    border-radius: 5px;
+                }
+            }
+        }
+
+
+        .btn_added {
+
+            input {
+               width: 40px;
+                height: 60px;
+                border-radius: 0px;
+                text-align: center;
+
+                &:focus {
+                    box-shadow: none;
+                }
+
+                &::-webkit-inner-spin-button {
+                    display: none;
+
+                }
+
+                input[type="text"] {
+                    width: 50px;
+                    padding-left: 0;
+                    padding-right: 0;
+                    display: inline-block;
+                    vertical-align: top;
+                    margin: 0;
+                
+                }
+            }
+            .btn_addcart{
+                margin-left: 30px;
+                background-color: black;
+                border: none;
+                color:var(--colorBg) ;
+                &:hover{
+                    color:var(--colorText) ;
+                }
+            }
+        }
+    }
+}

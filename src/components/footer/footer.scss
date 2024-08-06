@@ -1,55 +1,74 @@
-#footer{
+#footer {
     height: 100Vh;
-background-color: black;
-    color:#a4a4a4;
+    background-color: black;
+    color: #a4a4a4;
     padding-top: 30px;
-
-    .form_footer{
-        border: 1px dashed rgb(177, 177, 177) ;
+    
+    .form_footer {
+        border: 1px dashed rgb(177, 177, 177);
         border-bottom: none;
         border-top: none;
     }
- 
-        ul{
-           
-            padding: 0;
-            li{
-                list-style: none;
-              
-                a{
-                    text-decoration: none;
-                    color:#a4a4a4;
-                
-                }
-            }
-        }
-       
-      
 
-        h4{
-            color:var( --colorText)
-        }
-        .ip_footer{
-           
-            width: 60%;
-            margin: 0 auto;
-            position: relative;
-  
-            input{
-                border: none;
-                opacity: 0.8;
-                border-radius: 25px;
+    ul {
+
+        padding: 0;
+
+        li {
+            list-style: none;
+
+            a {
+                text-decoration: none;
                 color: #a4a4a4;
-                &:focus{
-                        box-shadow: none;
-                }
-            }
-            span{
-                position: absolute;
-                top: 5px;
-                right: 10px;
-                        padding-left: 3px;
-                border-left: 2px solid black;
+
             }
         }
+    }
+
+
+
+    h4 {
+        color: var(--colorText)
+    }
+
+    .ip_footer {
+
+        width: 60%;
+        margin: 0 auto;
+        position: relative;
+
+        input {
+            border: none;
+            opacity: 0.8;
+            border-radius: 25px;
+            color: #a4a4a4;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        span {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            padding-left: 3px;
+            border-left: 2px solid black;
+        }
+    }
+
+    .btn{
+        background-color: black;
+        border-radius: 25px;
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        z-index: 100;
+        bottom: 30px;
+        right: 30px;
+        &.acitve{
+            background-color: red;
+        }
+        
+    }
 }
