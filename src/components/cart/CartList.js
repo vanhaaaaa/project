@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Col, Container, Input, Row, Table } from 'reactstrap';
 import DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';
 import './cart.scss'
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
+import { clearCart, decrementQuantity, deleteCart, incrementQuantity } from '../../redux/cartSlice';
+import { Navigate } from 'react-router';
+import { Link } from 'react-router-dom';
 export default function CartList() {
     const dispatch = useDispatch();
-    const { cart } = useSelector(state => state.cart)
+    const { cart,totalAmount,totalQuantity } = useSelector(state => state.cart)
+
+   
     return (
         <>
 
@@ -65,16 +70,16 @@ export default function CartList() {
                                                     </td>
                                                     <td>
                                                         <div className='btn_added d-flex'>
-                                                            <Input type='button' disabled={item.quantity == 1 ? true : false} value={'-'} />
+                                                            <Input type='button' onClick={()=>dispatch(decrementQuantity(item.id))} disabled={item.quantity == 1 ? true : false} value={'-'} />
                                                             <Input type='number' min={1} value={item.quantity} onChange={(e) => e.target.value} />
-                                                            <Input type='button' value={'+'} />
+                                                            <Input type='button' onClick={()=>dispatch(incrementQuantity(item.id))} value={'+'} />
 
 
 
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <Button className='btn_delete'>
+                                                        <Button onClick={()=>dispatch(deleteCart(item.id))} className='btn_delete'>
                                                             <DeleteForeverRoundedIcon />
                                                         </Button>
 
@@ -89,34 +94,33 @@ export default function CartList() {
 
                                         </tbody>
                                     </Table>
-                                    <Button     >tiep tuc mua sam</Button>
+                               <Link className='text-decoration-none' to={"/products"}>    <Button   >tiep tuc mua sam</Button> </Link> 
+                                    <Button onClick={()=>dispatch(clearCart())}     >xóa tất cả sản phẩm</Button>
                                 </Col>
 
                                 <Col lg={3} className='checkout_cart' >
                                     <h4>Tổng số lượng</h4>
                                     <Table
                                     >
-                                        <thead>
-                                            <tr>
-                                                <th>
+                                        
+                                        <tbody>
+                                        <tr>
+                                                <th scope="row">
                                                   Tổng tiền
                                                 </th>
                                                 <td>
-                                                    1121212
+                                                    {totalAmount}
                                                 </td>
 
                                             </tr>
-                                        </thead>
-                                        <tbody>
-
                                             <tr>
                                                 <th scope="row">
-                                                  Số lượng món 
+                                                  Số lượng sản phẩm 
                                                 </th>
 
 
                                                 <td>
-                                                    @fat
+                                                {totalQuantity}
                                                 </td>
                                             </tr>
                                             <tr>
@@ -124,7 +128,7 @@ export default function CartList() {
                                                  Tổng cộng
                                                 </th>
                                                 <td>
-                                                    Larry
+                                                {totalAmount}
                                                 </td>
 
                                             </tr>
@@ -135,7 +139,7 @@ export default function CartList() {
                             </Row>
 
                         </Container> :
-                        <Container style={{ height: 1500 + 'px' }}>
+                        <Container style={{ height: 500 + 'px' }}>
 
                             <div className='cart_alert text-center'>
                                 <h3>Hãy mua sản phẩm </h3>
