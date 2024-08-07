@@ -39,10 +39,10 @@ export default function Products() {
         <Row>
           <Col lg={3} md={3}>
             <div className='category_prod'>
-            <h4>Category</h4>
+            <h4>Bộ lọc</h4>
          
            
-            <h5>Brand</h5>
+            <h5>Thương hiệu</h5>
         <div className='category_prod_img'>
     <Button lg={3} md={4}><img src={logo_gshock}  /></Button>
     <Button><img src={logo_olym}  /></Button>
@@ -53,7 +53,7 @@ export default function Products() {
 
           </div>
  <Navbar   color="faded" >
-            <h5 onClick={toggleNavbar} style={{marginLeft: -10 + 'px'}}>gender</h5>
+            <h5 onClick={toggleNavbar} style={{marginLeft: -10 + 'px'}}>Danh mục sản phẩm</h5>
         <ArrowDropDownCircleSharpIcon onClick={toggleNavbar} className="me-2" />
         <Collapse isOpen={collapsed} navbar>
           <Nav navbar>

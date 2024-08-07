@@ -6,6 +6,7 @@ import './prodmale.scss';
 import AddShoppingCartRoundedIcon from '@mui/icons-material/AddShoppingCartRounded';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Link } from 'react-router-dom';
+import { addCart } from '../../redux/cartSlice';
 export default function ProdFemale() {
 
     const dispatch = useDispatch();
@@ -68,7 +69,7 @@ export default function ProdFemale() {
                                                 </CardSubtitle>
                                                 <Link>
                                                     <div className='btn_add'>
-                                                        <Button >
+                                                        <Button              onClick={()=>dispatch(addCart(item)) } >
                                                             <AddShoppingCartRoundedIcon />
                                                         </Button>
 

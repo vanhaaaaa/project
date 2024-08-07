@@ -4,7 +4,10 @@ import { Button, Card, CardBody, CardSubtitle, CardTitle, Col } from 'reactstrap
 import AddShoppingCartRoundedIcon from '@mui/icons-material/AddShoppingCartRounded';
 import './product.scss';
 import ScrollAnimation from 'react-animate-on-scroll';
+import { useDispatch } from 'react-redux';
+import { addCart } from '../../redux/cartSlice';
 export default function Product(props) {
+    const dispatch =useDispatch();
     const { item, index } = props
     return (
         <>
@@ -43,13 +46,13 @@ export default function Product(props) {
                             </CardSubtitle>
             <Link>
                             <div className='btn_add'>
-                                <Button onClick={()=>alert("asd")} >       <AddShoppingCartRoundedIcon />
+                                <Button onClick={()=>dispatch(addCart(item, index))} >       <AddShoppingCartRoundedIcon />
 
                                 </Button>
                             </div>
                             </Link>
                         </CardBody>
-                        <div key={index}></div>
+                      
                     </Card>
 
                 </ScrollAnimation>

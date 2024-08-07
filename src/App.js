@@ -6,6 +6,7 @@ import { Container } from "reactstrap";
 import Product from "./pages/products/Product";
 
 import ProdDetail from "./pages/productDetail/ProdDetail";
+import Cart from "./pages/cart/Cart";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
   <Route index element={<Home />}></Route>
   <Route path="/products" element={<Product />}></Route>
   <Route path="/detail/:id" element={<ProdDetail />}></Route>
+  <Route path="/cart" element={<Cart />}></Route>
 </Routes>
 
       </HashRouter>

@@ -35,6 +35,7 @@ import { Link } from 'react-router-dom';
 
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import SearchIcon from '@mui/icons-material/Search';
+import { useSelector } from 'react-redux';
 
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -53,7 +54,7 @@ export default function Header() {
   const [animating, setAnimating] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [navbarBg, setNavbar] = useState(false);
-
+  const {cart} =useSelector(state=>state.cart)
 
   const toggle = () => setIsOpen(!isOpen);
   const items = [
@@ -152,16 +153,16 @@ export default function Header() {
           <Collapse isOpen={isOpen} navbar>
             <Nav className="me-auto" navbar>
               <NavItem>
-                <Link to={"/"}>Home</Link>
+                <Link to={"/"}>Trang chủ </Link>
               </NavItem>
               <NavItem>
-                <Link to={"/products"}>products</Link>
+                <Link to={"/products"}>sản phẩm </Link>
               </NavItem>
               <NavItem >
-                <Link to={"/contact"}>contact</Link>
+                <Link to={"/contact"}>giới thiệu </Link>
               </NavItem>
               <NavItem >
-                <Link to={"/contact"}>   discover</Link>
+                <Link to={"/contact"}> liên hệ  </Link>
               </NavItem>
 
             </Nav>
@@ -173,11 +174,14 @@ export default function Header() {
               <span><SearchIcon /></span>
             </div>
             <div>
+              <Link to={"/cart"}>
               <IconButton aria-label="cart" color="light">
-                <StyledBadge badgeContent={4} color="white">
+                <StyledBadge badgeContent={cart.length} color="white">
                   <ShoppingCartIcon />
                 </StyledBadge>
               </IconButton>
+
+              </Link>
             </div>
 
 

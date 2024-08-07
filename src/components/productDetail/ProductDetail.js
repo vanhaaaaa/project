@@ -1,13 +1,19 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { Button, Col, Container, Input, Row } from 'reactstrap';
 import './prodDetail.scss';
+import { useDispatch } from 'react-redux';
+import { addCart } from '../../redux/cartSlice';
+
 export default function ProductDetail() {
+    const navigate = useNavigate();
     const { id } = useParams()
     const [data, setData] = useState({})
     const [imgSp, setImgSp] = useState(data.img)
     const [quantity,setQuantity]=useState(1)
+    const dispatch =useDispatch();
+  
     const url = "https://66a0a2837053166bcabc1470.mockapi.io/product"
     const fetchData = () => {
         axios.get(url + "/" + id)
@@ -27,8 +33,10 @@ export default function ProductDetail() {
    const  addQuantity=(e)=>{
     if(e =="+"){
         setQuantity(prev=>prev+1)
+    
     }else if(e=="-"){
         setQuantity(prev=>prev-1)
+      
     }
 
    }
@@ -72,15 +80,15 @@ export default function ProductDetail() {
 
                 <div className='btn_added d-flex'>
                                 <Input type='button' disabled={quantity==1?true:false}   value={'-'} onClick={()=>addQuantity("-")}  />
-                                <Input type='number' min={1}  value={quantity} onChange={(e)=>e.target.value}  />
+                                <Input type='number' min={1}  value={quantity} onChange={(e)=>e.target.value}    />
                                 <Input type='button'   value={'+'}   onClick={()=>addQuantity("+")} />
 
 
-                                <Button className='btn_addcart'>them vao gio hang</Button>
+                                <Button onClick={()=>{dispatch(addCart({...data,quantity:quantity})) ;navigate("/cart")}} className='btn_addcart'>them vao gio hang</Button>
                                 </div>
                                 </Col>
                               
-
+                   
 
                             </Row>
       

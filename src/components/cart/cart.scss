@@ -1,0 +1,98 @@
+#cart {
+
+
+    .container {
+
+
+        table {
+
+            th {
+                text-align: center;
+                width: 20%;
+            }
+
+            td {
+                line-height: 70px;
+                text-align: center;
+
+                .btn_added {
+                    transform: translate(32px, 15px);
+                    width: 50%;
+
+                    input {
+                        &::-webkit-inner-spin-button {
+                            display: none;
+
+                        }
+                    }
+
+                    input[type="number"] {
+                        padding: 0;
+                        width: 50px;
+                        text-align: center;
+
+                    }
+
+                    input[type="button"] {
+                        width: 34px;
+                        text-align: center;
+
+                    }
+                }
+
+
+                .btn_delete {
+                 
+                        color: black;
+                        background: none;
+                        border: none;
+                        &:hover{
+                            color: red;
+                        }
+                    
+                }
+
+            }
+
+            th:first-child {
+                width: 60%;
+                text-align: start;
+
+                span {
+                    font-size: 15px;
+                    font-weight: 400;
+                }
+
+                img {
+                    width: 15%;
+                }
+            }
+
+        }
+
+        .checkout_cart{
+        
+            border-left: 1px solid gray;
+       
+            table{
+                th{
+                    color: var(--colorBg);
+                }
+                
+            }
+            button{
+                width: 100%;
+                background-color: var(--colorText);
+                border: none;
+                font-size: 20px;
+                text-transform: uppercase;
+                padding: 10px;
+
+                &:hover{
+                    opacity: 0.9;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                }
+            }
+        }
+    }
+}
