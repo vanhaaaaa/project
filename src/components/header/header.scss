@@ -6,6 +6,7 @@
   font-size: 24px;
   font-weight: 100;
   margin-bottom: 20px;
+
   .navbar-expand-md {
     position: fixed;
 
@@ -81,7 +82,7 @@
 
   }
 
- 
+
 
   .menu_header {
     position: fixed;
@@ -104,7 +105,7 @@
   .slider {
     width: 100%;
     background-size: cover;
-    opacity: 0.9;
+    opacity: 0.95;
 
     img {
       max-width: 100%;
@@ -124,11 +125,11 @@
     color: white;
 
     input {
-
+      
       border-radius: 25px;
-      color: white;
-      background: rgba(42, 42, 45, 0.88);
 
+      background: #a4a4a4;
+   
       border: none;
 
 
@@ -146,4 +147,28 @@
       color: var(--colorText);
     }
   }
+}
+
+@media screen and (max-width: 600px) {
+
+  #header{
+
+  .menu_header {
+    .container-fluid{
+      flex-direction: row-reverse;
+    }
+   
+  
+    padding: 0px 10px;
+    background-color: black;
+  }
+
+    .slider {
+      margin-top: 83px;
+
+    }
+ 
+
+}
+
 }

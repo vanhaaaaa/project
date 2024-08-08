@@ -6,26 +6,16 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
   Input,
-  Container, Carousel,
+ Carousel,
   CarouselItem,
-  CarouselControl,
   CarouselIndicators,
-  CarouselCaption,
-
-  Button,
 } from 'reactstrap';
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import "./header.css";
+
 import "./header.scss";
 import logo from "../../assets/logo.png"
 import slide1 from "../../assets/slide1.jpg"
@@ -125,7 +115,7 @@ export default function Header() {
 
   const changeBg = () => {
 
-    if (window.scrollY >= 500 && document.title == "AW Home") {
+    if (window.scrollY >= 300 && document.title == "AW Home") {
       setNavbar(true);
      
 
@@ -159,7 +149,7 @@ export default function Header() {
                 <Link to={"/products"}>sản phẩm </Link>
               </NavItem>
               <NavItem >
-                <Link to={"/contact"}>giới thiệu </Link>
+                <Link to={"/about"}>giới thiệu </Link>
               </NavItem>
               <NavItem >
                 <Link to={"/contact"}> liên hệ  </Link>

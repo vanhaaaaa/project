@@ -50,7 +50,9 @@ export default function ProdMale() {
                         <CardSubtitle
                           className="mb-2 text-muted"
                           tag="h6">
-                          {item.price}
+                         {new Intl.NumberFormat("en-US").format(item.price)}
+                                           
+                                           ₫
                         </CardSubtitle>
                         <Link>
                           <div className='btn_add'>

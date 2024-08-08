@@ -42,7 +42,9 @@ export default function Product(props) {
                                 className=" text-muted mt-2"
                                 tag="h6"
                             >
-                                {item.price}
+                                 {new Intl.NumberFormat("en-US").format(item.price)}
+                                           
+                                           ₫
                             </CardSubtitle>
             <Link>
                             <div className='btn_add'>

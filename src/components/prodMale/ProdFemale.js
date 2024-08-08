@@ -9,12 +9,12 @@ import { Link } from 'react-router-dom';
 import { addCart } from '../../redux/cartSlice';
 export default function ProdFemale() {
     const dispatch = useDispatch();
-    const { items, status, error } = useSelector(state => state.products)
+    const { items, status } = useSelector(state => state.products)
     useEffect(() => {
         dispatch(prodMaleL());
     }, []);
     if (status == 'loading') return <div>loading...</div>
-    if (status == 'faild') return <div>{error}</div>
+
     const prodMale = items.filter(item => item.sex == "nu")
     return (
         <>
@@ -49,7 +49,9 @@ export default function ProdFemale() {
                                                     className="mb-2 text-muted"
                                                     tag="h6"
                                                 >
-                                                    {item.price}
+                                                   {new Intl.NumberFormat("en-US").format(item.price)}
+                                           
+                                           ₫
                                                 </CardSubtitle>
                                                 <Link>
                                                     <div className='btn_add'>

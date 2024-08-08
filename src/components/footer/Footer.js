@@ -4,6 +4,11 @@ import { Button, Col, Container, Input, Row } from 'reactstrap';
 import logo from "../../assets/logo.png"
 import SearchIcon from '@mui/icons-material/Search';
 import NorthIcon from '@mui/icons-material/North';
+
+import FacebookIcon from '@mui/icons-material/Facebook';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import AppleIcon from '@mui/icons-material/Apple';
 export default function Footer() {
 
 
@@ -52,11 +57,12 @@ export default function Footer() {
 <Col lg={3} md={4} xs={12}>
 <h4>Kết nối</h4>
 <ul>
+<li>  <span><FacebookIcon/></span> <span><YouTubeIcon/></span> <span><TwitterIcon/></span> <span><AppleIcon/></span>  </li>
 <li><a  href='/'>Chính sách bảo hành</a> </li>
 <li><a  href='/'>Chính sách vận chuyển</a> </li>
 <li><a  href='/'>Chính sách & Quy định chung</a>  </li>
-<li><a  href='/'>Chính sách xử lý dữ liệu cá nhân</a> </li>
-  <li><a  href='/'>Chính sách bảo mật thông tin khách hàng</a> </li>
+
+
  
  
 
@@ -66,6 +72,8 @@ export default function Footer() {
 
 </Row>
 
+
+<hr/><hr/>
 
 <Button onClick={()=>scrollTop()} ><NorthIcon/></Button>
 

@@ -89,3 +89,26 @@
     
     
 }
+
+
+@media screen and (max-width: 600px) {
+
+    #container .TTsp{
+
+        height: auto;
+        .card_img {
+      
+            height: auto;
+         }
+         .btn_add{
+            opacity: 1;
+            transform: translateY(110px);
+           
+            top: 0;
+        
+         }
+    }
+    
+   
+  
+  }

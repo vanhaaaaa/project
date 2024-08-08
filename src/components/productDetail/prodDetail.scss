@@ -92,3 +92,37 @@
         }
     }
 }
+
+
+@media screen and (max-width: 600px) {
+
+    #prod_detail{
+        .row{
+            .prod_left{
+                .prod_left_img {
+
+                    .prod_img{
+                        margin-left: 15px;
+                    }
+                    width: 100%;
+                        display: flex;
+                        flex-direction: row-reverse;
+      
+
+                        .prod_carosel {
+                            margin: 0;
+                            box-shadow: none;
+                            .col-lg-4{
+                                padding: 0;
+                            }
+                            width: 40%;
+                        }
+                }   
+            }
+           
+        } 
+    } 
+  
+  }
+
+

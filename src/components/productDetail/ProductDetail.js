@@ -53,7 +53,7 @@ export default function ProductDetail() {
 
 
                             </div>
-                            <Row className='prod_carosel mt-2  d-flex     '>
+                            <Row className='prod_carosel mt-2  d-flex '>
 
                                 <Col lg={4}>  <Button onClick={() => setImgSp(data.img)}>   <img src={data.img} /> </Button></Col>
                               
@@ -68,11 +68,13 @@ export default function ProductDetail() {
                         </div>
                     </Col>
                     <Col className='prod_right' lg={6} md={12}>
-                        <h3> {data.name}</h3>
+                        <h3 className='mt-2'> {data.name}</h3>
                         <div className='prod_price'>
 
 
-                            <h4> {data.price}</h4>
+                            <h4> {new Intl.NumberFormat("en-US").format(data.price)}
+                                           
+                                           ₫</h4>
                         </div>
                         <div className='prod_description'>
                             <p>{data.sex} {data.name} thay cho thiết kế cửa sổ lich cổ điển là thiết kế mới lịch ngày và thứ đều sử dụng đồng hồ kim mang tính hiện đại, trẻ trung. Nổi bật trên nền mặt số đen là thiết kế phá cách kim giây đỏ làm điểm nhấn nổi bật. Dây đeo bằng da tạo vân cá sấu nổi bật với hai đường chỉ may trắng tinh xảo.</p>
