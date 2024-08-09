@@ -47,8 +47,8 @@ export default function Products() {
           <Col lg={3} md={3}>
             <div className='category_prod'>
               <h4>Bộ lọc</h4>
-
-
+        <Button>loc</Button>
+        <Button>xoa</Button>
               <h5>Thương hiệu</h5>
               <div className='category_prod_img'>
                 <Button lg={3} md={4}><img src={logo_gshock} /></Button>

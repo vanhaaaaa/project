@@ -1,0 +1,38 @@
+#main{
+    .container{
+        h3{
+            color: #3c3451;
+            font-size: 32px;
+            font-weight: bold;
+            line-height: 32px;
+            margin: 16px 0px;
+            padding-bottom: 25px;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            clear: both;
+            font-family: "Roboto Slab", serif;
+        }
+    
+        .row{
+            display: flex;
+            justify-content: space-around;
+
+            .col-lg-2{
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                text-align: center;
+  
+       
+            }
+        }
+    
+       
+                img{
+                    width: 80%;
+                  
+                }
+    }
+   
+       
+}
+

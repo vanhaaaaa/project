@@ -4,37 +4,41 @@ import { Button, Col, Container, Input, Row, Table } from 'reactstrap';
 import DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';
 import './cart.scss'
 import { clearCart, decrementQuantity, deleteCart, incrementQuantity } from '../../redux/cartSlice';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 export default function CartList() {
     const dispatch = useDispatch();
     const { cart, totalAmount, totalQuantity } = useSelector(state => state.cart)
+    const navigate = useNavigate();
+    const handle_checkout = () => {
+        let timerInterval;
+        Swal.fire({
+            title: "đợi 1 chút nhé!",
+            html: "đang tới trang thanh toán",
+            icon:"info",
+            timer: 1200,
+            timerProgressBar: true,
+            showConfirmButton: false,
+        }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+                console.log("I was closed by the timer");
+            }
+            navigate('/checkout')
+        });
 
-
+      
+    }
     return (
         <>
-
-
-
-
-
             <div id='cart'>
                 {
                     cart != "" ?
                         <Container>
-
-
-
-
-
-
                             <h3>Giỏ hàng của bạn</h3>
-
-
                             <Row>
                                 <Col lg={9}>
-                                    <Table
-
-                                    >
+                                    <Table>
                                         <thead>
                                             <tr>
                                                 <th>
@@ -52,7 +56,6 @@ export default function CartList() {
                                             </tr>
                                         </thead>
                                         <tbody>
-
                                             {cart?.map((item, index) => (
 
 
@@ -62,9 +65,9 @@ export default function CartList() {
 
                                                     </th>
                                                     <td>
-                                                    {new Intl.NumberFormat("en-US").format(item.price)}
-                                           
-                                           ₫
+                                                        {new Intl.NumberFormat("en-US").format(item.price)}
+
+                                                        ₫
 
                                                     </td>
                                                     <td>
@@ -108,9 +111,9 @@ export default function CartList() {
                                                     Tổng tiền
                                                 </th>
                                                 <td>
-                                           {new Intl.NumberFormat("en-US").format(totalAmount)}
-                                           
-                                           ₫
+                                                    {new Intl.NumberFormat("en-US").format(totalAmount)}
+
+                                                    ₫
                                                 </td>
 
                                             </tr>
@@ -132,14 +135,14 @@ export default function CartList() {
 
                                                     {
 
-new Intl.NumberFormat("en-US").format(totalAmount)}₫
+                                                        new Intl.NumberFormat("en-US").format(totalAmount)}₫
 
                                                 </td>
 
                                             </tr>
                                         </tbody>
                                     </Table>
-                                    <Button>Thanh toán</Button>
+                                    <Button onClick={() => handle_checkout()}>Thanh toán</Button>
                                 </Col>
                             </Row>
 

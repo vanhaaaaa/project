@@ -8,7 +8,7 @@ const initialState = {
     error: null,
     totalPage: 30
 };
-const url = 'https://66a0a2837053166bcabc1470.mockapi.io/product'
+const url = 'https://66a0a2837053166bcabc1470.mockapi.io/product';
 export const fetchApi = createAsyncThunk('products/fetchApi', async (page) => {
     const responve = await axios.get(`${url}?page=${page}&&limit=6`);
     return responve.data;

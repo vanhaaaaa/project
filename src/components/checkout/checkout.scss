@@ -1,0 +1,35 @@
+#checkout_list{
+        margin: 40px 0px;
+
+
+    .form_left{
+            border-bottom: 2px solid gray;
+            border-right: 2px solid gray;
+    }
+
+    .form_right{
+        border-top: 2px solid gray;
+        table{
+         
+            th{
+                border-bottom:2px solid gray;
+            }
+
+
+            p{
+                width: 100%;
+               text-transform: lowercase;
+               overflow: hidden;
+               
+            }
+        }
+      .btn{
+        width: 30%;
+        text-align: center;
+        background-color: var(--colorText);
+        border: none;
+        text-transform: uppercase;
+        font-size: 20px;
+      }
+    }
+}

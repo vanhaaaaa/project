@@ -7,15 +7,32 @@ import AddShoppingCartRoundedIcon from '@mui/icons-material/AddShoppingCartRound
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Link } from 'react-router-dom';
 import { addCart } from '../../redux/cartSlice';
+import Swal from 'sweetalert2';
 export default function ProdFemale() {
     const dispatch = useDispatch();
-    const { items, status } = useSelector(state => state.products)
+    const { items } = useSelector(state => state.products)
     useEffect(() => {
         dispatch(prodMaleL());
     }, []);
-    if (status == 'loading') return <div>loading...</div>
+
 
     const prodMale = items.filter(item => item.sex == "nu")
+
+
+    const handle_add = (item)=>{
+        Swal.fire({
+            position: "top-end",
+            imageUrl: item.img,
+            imageWidth: 80,
+            imageHeight: 100,
+            title: item.name + " đã thêm vào giỏ hàng thành công",
+            icon: "success",
+            showConfirmButton: false,
+            timer: 1000,
+           
+          });
+        dispatch(addCart(item))
+    }
     return (
         <>
             <Container id='container'>
@@ -55,7 +72,7 @@ export default function ProdFemale() {
                                                 </CardSubtitle>
                                                 <Link>
                                                     <div className='btn_add'>
-                                                        <Button onClick={() => dispatch(addCart(item))} >
+                                                        <Button onClick={() => handle_add(item)} >
                                                             <AddShoppingCartRoundedIcon />
                                                         </Button>
 

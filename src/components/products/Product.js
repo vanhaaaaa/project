@@ -6,9 +6,25 @@ import './product.scss';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { useDispatch } from 'react-redux';
 import { addCart } from '../../redux/cartSlice';
+import Swal from 'sweetalert2';
 export default function Product(props) {
     const dispatch =useDispatch();
     const { item, index } = props
+
+    const handle_add = (item,index)=>{
+        Swal.fire({
+            position: "top-end",
+            imageUrl: item.img,
+            imageWidth: 80,
+            imageHeight: 100,
+            title: item.name + " đã thêm vào giỏ hàng thành công",
+            icon: "success",
+            showConfirmButton: false,
+            timer: 1000,
+           
+          });
+        dispatch(addCart(item, index))
+    }
     return (
         <>
 
@@ -48,7 +64,7 @@ export default function Product(props) {
                             </CardSubtitle>
             <Link>
                             <div className='btn_add'>
-                                <Button onClick={()=>dispatch(addCart(item, index))} >       <AddShoppingCartRoundedIcon />
+                                <Button onClick={()=>handle_add(item,index)} >       <AddShoppingCartRoundedIcon />
 
                                 </Button>
                             </div>

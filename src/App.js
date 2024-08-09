@@ -9,6 +9,8 @@ import ProdDetail from "./pages/productDetail/ProdDetail";
 import Cart from "./pages/cart/Cart";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
+import Checkout from "./pages/cart/Checkout";
+import FinalCheckout from "./components/checkout/FinalCheckout";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
   <Route path="/cart" element={<Cart />}></Route>
   <Route path="/contact" element={<Contact />}></Route>
   <Route path="/About" element={<About />}></Route>
+  <Route path="/checkout" element={<Checkout />}></Route>
+  <Route path="/finalcheckout" element={<FinalCheckout />}></Route>
 </Routes>
 
       </HashRouter>
