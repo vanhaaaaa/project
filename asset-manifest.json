@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/project/static/css/main.5d96e4e5.css",
+    "main.js": "/project/static/js/main.fe0ddb77.js",
+    "static/media/slide2.jpg": "/project/static/media/slide2.bee3c45e5499bc949810.jpg",
+    "static/media/slide3.jpg": "/project/static/media/slide3.cfe7fc0c3e9fe5ee243d.jpg",
+    "static/media/slide1.jpg": "/project/static/media/slide1.d86ac89378713ebbf642.jpg",
+    "static/media/logo_tissot.png": "/project/static/media/logo_tissot.ca0a13ce98c80107186b.png",
+    "static/media/logo.png": "/project/static/media/logo.c60d54e5a5419d00040c.png",
+    "static/media/logo_orient.png": "/project/static/media/logo_orient.30d4d3aa6ea9af1b72ee.png",
+    "static/media/logo_citizen.png": "/project/static/media/logo_citizen.ff56bfdc01740425def2.png",
+    "static/media/logo_gshock.png": "/project/static/media/logo_gshock.f20cdc336618d8dfd357.png",
+    "static/media/logo_olym.png": "/project/static/media/logo_olym.2197ca0a64cceaeeeab6.png",
+    "index.html": "/project/index.html",
+    "main.5d96e4e5.css.map": "/project/static/css/main.5d96e4e5.css.map",
+    "main.fe0ddb77.js.map": "/project/static/js/main.fe0ddb77.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5d96e4e5.css",
+    "static/js/main.fe0ddb77.js"
+  ]
+}
