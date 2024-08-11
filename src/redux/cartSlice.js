@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import axios from "axios";
 
 const items =
     localStorage.getItem("cart") !== null
@@ -15,8 +16,11 @@ const totalQuantity =
         ? JSON.parse(localStorage.getItem("totalQuantity"))
         : 0;
 
-
-
+const url = 'https://66b77d767f7b1c6d8f1c06dc.mockapi.io/cart'
+export const addToCart = createAsyncThunk('products/addCart', async (cart) => {
+    const responve = await axios.post(`${url}`, cart);
+    return responve.data;
+});
 const cartSlice = createSlice({
     name: "cart",
     initialState: {
@@ -26,6 +30,8 @@ const cartSlice = createSlice({
     },
 
     reducers: {
+
+
         addCart: (state, action) => {
 
 
@@ -110,7 +116,9 @@ const cartSlice = createSlice({
             localStorage.setItem("totalAmount", JSON.stringify(state.totalAmount))
         },
 
-    }
+
+    },
+
 
 })
 

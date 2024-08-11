@@ -12,6 +12,10 @@ import About from "./pages/about/About";
 import Checkout from "./pages/cart/Checkout";
 import FinalCheckout from "./components/checkout/FinalCheckout";
 
+import LoginPage from "./pages/user/LoginPage";
+import RegisterPage from "./pages/user/RegisterPage";
+
+
 function App() {
   return (
     <>
@@ -27,6 +31,8 @@ function App() {
   <Route path="/About" element={<About />}></Route>
   <Route path="/checkout" element={<Checkout />}></Route>
   <Route path="/finalcheckout" element={<FinalCheckout />}></Route>
+  <Route path="/login" element={<LoginPage />}></Route>
+  <Route path="/register" element={<RegisterPage />}></Route>
 </Routes>
 
       </HashRouter>

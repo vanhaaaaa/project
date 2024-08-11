@@ -26,6 +26,8 @@ import { Link } from 'react-router-dom';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import SearchIcon from '@mui/icons-material/Search';
 import { useSelector } from 'react-redux';
+import Menu from './Menu';
+
 
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -158,6 +160,9 @@ export default function Header() {
             </Nav>
 
 
+   
+
+
             <div className='box'>
 
               <Input type='text' placeholder='ban muon mua gi?' />
@@ -172,8 +177,10 @@ export default function Header() {
               </IconButton>
 
               </Link>
-            </div>
 
+             
+            </div>
+            <Menu/>
 
           </Collapse>
 

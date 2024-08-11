@@ -96,8 +96,15 @@ export default function CartList() {
 
                                         </tbody>
                                     </Table>
-                                    <Link className='text-decoration-none' to={"/products"}>    <Button   >tiep tuc mua sam</Button> </Link>
-                                    <Button onClick={() => dispatch(clearCart())}     >xóa tất cả sản phẩm</Button>
+                             <Row>
+
+                                <Col lg={3}>
+                                    <Link className='text-decoration-none  ' to={"/products"}>    <Button style={{background:'#567171'}}  >tiếp tục mua hàng</Button> </Link>
+                                    </Col>
+                                    <Col lg={4}>
+                                    <Button style={{background:'red'}}  onClick={() => dispatch(clearCart())}     >xóa tất cả sản phẩm</Button>
+                                    </Col>
+                                    </Row>
                                 </Col>
 
                                 <Col lg={3} className='checkout_cart' >

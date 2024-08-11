@@ -1,9 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from "axios";
 
-
+const product =
+    localStorage.getItem("product") !== null
+        ? JSON.parse(localStorage.getItem("product"))
+        : [];
 const initialState = {
-    items: [],
+    items:product,
     status: 'start',
     error: null,
     totalPage: 30
@@ -32,6 +35,7 @@ const productsSlice = createSlice({
             .addCase(fetchApi.fulfilled, (state, action) => {
                 state.status = 'succeed';
                 state.items = action.payload;
+                localStorage.setItem("product", JSON.stringify(  state.items))
             })
             .addCase(prodMaleL.fulfilled, (state, action) => {
                 state.status = 'succeed';
