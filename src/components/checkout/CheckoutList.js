@@ -7,6 +7,7 @@ import emailjs from 'emailjs-com';
 import {  clearCart } from '../../redux/cartSlice';
 import axios from 'axios';
 import FinalCheckout from './FinalCheckout';
+import Swal from 'sweetalert2';
 export default function CheckoutList() {
   const dispatch = useDispatch();
   const { cart, totalAmount, totalQuantity } = useSelector(state => state.cart)
@@ -42,14 +43,14 @@ export default function CheckoutList() {
   const newCart = {cart,gmail:formData.email,phone:formData.phone,name:formData.name,address:formData.address,id_order:formData.name + formData.phone}
     try {
       await axios.post('https://66b77d767f7b1c6d8f1c06dc.mockapi.io/cart', { newCart});
-      alert('Cart saved successfully!');
+    
      
     } catch (error) {
-      console.error('Error saving cart:', error);
-      alert('Failed to save cart.');
+    
+   
     }
     const templateParams = {
-
+      email:formData.email,
       name: formData.name,
       from_name: 'Aw shop',
       order_id: formData.name + formData.phone,
@@ -70,8 +71,26 @@ export default function CheckoutList() {
     emailjs.send('service_18kjnin', 'template_4oyzg8j', templateParams, 'CLDXjq5yFH9XUUYGD')
     localStorage.setItem("orderDetail", JSON.stringify(newCart))
     dispatch(clearCart())
+    Swal.fire({
+      title: "đợi 1 chút nhé!",
+      html: "đang xử lý",
+      icon:"info",
+      timer: 1500,
+      timerProgressBar: true,
+      showConfirmButton: false,
+  }).then((result) => {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+          console.log("I was closed by the timer");
+      }
+      Swal.fire({
+        title: "thanks you!",
+        text: "Đơn hàng đã đặt thành công",
+        icon: "success"
+      });
+      navigate('/finalcheckout');
+  });
 
-    navigate('/finalcheckout');
 
   }
   return (

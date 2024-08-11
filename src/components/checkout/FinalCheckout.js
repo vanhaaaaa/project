@@ -21,7 +21,7 @@ const [data,setData]=useState({
         setData(JSON.parse(localStorage.getItem("orderDetail")))
     }
 }, [])
-  
+
   return (
    <>
     
