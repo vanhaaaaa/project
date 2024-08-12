@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../header/Header'
 import Footer from '../footer/Footer'
-import { Container } from 'reactstrap'
+import { Container, Table } from 'reactstrap'
 import axios from 'axios'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
@@ -31,19 +31,56 @@ export default function FinalCheckout() {
       {
         data.cart!=""  ? 
         <Container>
+
+
       <h5 className='text-center'>Chi tiết đơn hàng</h5>
 
-        <h6>gmail:{data.gmail}</h6>
-        <h6>name:{data.name}</h6>
-        <h6>phone:{data.phone}</h6>
+        <h6>email:<strong> {data.gmail}</strong></h6>
+        <h6>Tên người nhận hàng:<strong> {data.name}</strong></h6>
+        <h6>Số điện thoại :<strong> {data.phone} </strong></h6>
 
+        <Table
+        bordered
+        borderless
+        dark
+        responsive
+        striped
+>
+  <thead>
+    <tr>
+      <th>
+        #
+      </th>
+      <th>
+       Tên sản phẩm
+      </th>
+      <th>
+     số lượng
+      </th>
+      <th>
+     giá
+      </th>
+      <th>
+  tổng cộng
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  {data.cart.map((item, index) => (
 
-        {data.cart.map((item, index) => (
-          <li key={index}>
-            <p><strong>Tên sản phẩm:</strong> {item.name}</p>
-            <p><strong>Giá:</strong> {item.price}</p>
-          </li>
-        ))}
+<tr key={index}>
+<td>    {index+1}</td> 
+<td>    {item.name}</td> 
+<td>    {item.quantity}</td> 
+<td>         {new Intl.NumberFormat("en-US").format(item.price)}</td> 
+<td>         {new Intl.NumberFormat("en-US").format(item.totalPrice)}</td> 
+  </tr>
+))}
+   
+    
+  </tbody>
+</Table>
+       
       
 
 

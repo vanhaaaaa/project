@@ -55,7 +55,7 @@ export default function CheckoutList() {
       from_name: 'Aw shop',
       order_id: formData.name + formData.phone,
       totalQuantity: totalQuantity,
-      totalAmount: totalAmount,
+      totalAmount: new Intl.NumberFormat("en-US").format(totalAmount),
       phone:formData.phone,
       address:formData.address,
       cart:cart.map(item => 
@@ -63,8 +63,8 @@ export default function CheckoutList() {
       <tr>
                 <td>${item.name}</td>
               <td>${item.quantity}</td>
-              <td>${item.price}</td>
-                <td>${item.totalPrice}</td>
+              <td>${new Intl.NumberFormat("en-US").format(item.price)}</td>
+                <td>${new Intl.NumberFormat("en-US").format(item.totalPrice)}</td>
               </tr>`
     ).join('')
     };
@@ -90,7 +90,9 @@ export default function CheckoutList() {
       });
       navigate('/finalcheckout');
   });
-
+  setTimeout(() => {
+    localStorage.removeItem('orderDetail'); 
+}, 400000);
 
   }
   return (
