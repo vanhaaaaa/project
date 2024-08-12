@@ -1,68 +1,62 @@
+// src/components/Register.js
+import React, { useState } from 'react';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { auth } from '../firebase';
+import { Navigate, useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
+import { Button, Input } from 'reactstrap';
 
-import { Button, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
-import './style.scss';
-export default function Register() {
-    const dispatch = useDispatch();
+const Register = () => {
+  const navigete=useNavigate()
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-    useEffect(() => {
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      // Handle successful registration (e.g., redirect, show message)
 
-    }, []);
+
+      
+      navigete('/login');
+    } catch (error) {
+      setError(error.message); // Display error message
+    }
+  };
+
   return (
-    <>
+    
     <div className='form_login'>
-<Container>
-
-
-    <Form>
-    <h4>Register</h4>
-<Row>
-<Col md={12}>
-<FormGroup>
-<Label for="exampleEmail">
-  Email
-</Label>
-<Input
-  id="exampleEmail"
-  name="email"
-  placeholder="email"
-  type="email"
-/>
-</FormGroup>
-</Col>
-<Col md={12}>
-<FormGroup>
-<Label for="examplePassword">
-  Password
-</Label>
-<Input
-  id="examplePassword"
-  name="password"
-  placeholder="password placeholder"
-  type="password"
-/>
-</FormGroup>
-</Col>
-</Row>
-
-
-
-
-<Button>
-dang ky
-</Button>
-</Form>
-
-
-
-
-</Container>
-
+     
+      <form onSubmit={handleRegister}>
+      <h2>Register</h2>
+        <label>
+          Email:
+          <Input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </label><br/>
+        <label>
+          Password:
+          <Input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </label><br/>
+        <Button type="submit">Register</Button>
+        <Link to={'/login'}>login</Link>
+      </form>
+      {error && <p>{error}</p>}
     </div>
+  );
+};
 
-
-</>
-  )
-}
+export default Register;

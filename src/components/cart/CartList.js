@@ -32,8 +32,8 @@ export default function CartList() {
     return (
         <>
             <div id='cart'>
-                {
-                    cart != "" ?
+               
+           
                         <Container>
                             <h3>Giỏ hàng của bạn</h3>
                             <Row>

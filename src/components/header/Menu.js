@@ -21,6 +21,10 @@ export default function Menu() {
       <Link to={'/login'}>
         <DropdownItem>Đăng nhập</DropdownItem>
         </Link>
+        <Link to={'/finalcheckout'}>
+        <DropdownItem>Đơn hàng</DropdownItem>
+        </Link>
+      
       </DropdownMenu>
     </Dropdown>
   </div>

@@ -1,5 +1,5 @@
 #footer {
-    height: 70Vh;
+    height: 50Vh;
     background-color: black;
     color: #a4a4a4;
     padding-top: 30px;
@@ -72,3 +72,12 @@
         
     }
 }
+@media screen and (max-width: 600px) {
+
+    #footer{
+  
+        height:70vh;
+  
+  }
+  
+  }

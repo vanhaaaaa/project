@@ -16,11 +16,11 @@ export default function Main() {
 
 
         <Row>
-          <Col lg={2}><img src={logo_gshock} /></Col>
-          <Col lg={2}><img src={logo_olym} /></Col>
-          <Col lg={2}><img src={logo_orient} /></Col>
-          <Col lg={2}><img src={logo_sitizen} /></Col>
-          <Col lg={2}><img src={logo_tissot} /></Col>
+          <Col lg={2} md={3} xs={6}><img src={logo_gshock} /></Col>
+          <Col lg={2} md={3} xs={6}><img src={logo_olym} /></Col>
+          <Col lg={2} md={3} xs={6}><img src={logo_orient} /></Col>
+          <Col lg={2} md={3} xs={6}><img src={logo_sitizen} /></Col>
+          <Col lg={2} md={3} xs={6}><img src={logo_tissot} /></Col>
         </Row>
 
 

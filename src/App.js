@@ -17,6 +17,12 @@ import RegisterPage from "./pages/user/RegisterPage";
 
 
 function App() {
+  // const [user, setUser] = useState(null);
+
+  // useEffect(() => {
+  //   const unsubscribe = auth.onAuthStateChanged(setUser);
+  //   return () => unsubscribe();
+  // }, []);
   return (
     <>
 

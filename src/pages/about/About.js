@@ -8,22 +8,9 @@ export default function About() {
         <>
             <Header />
 
-            <h1>
-                login
-
-            </h1>
-            <h1>
-           filter
-
-            </h1>
-            <h1>
-         search
-
-            </h1>
-
             <div id='about'>
             <Container>
-                        <h2 className='text-center'>tin tuc & su kien</h2>
+                        <h2 className='text-center'>Tin Tức && Sự kiện</h2>
 
                 <Row>
 

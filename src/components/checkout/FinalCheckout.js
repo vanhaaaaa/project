@@ -7,56 +7,65 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 
 
 export default function FinalCheckout() {
-const [data,setData]=useState({
-  address: '',
-  cart: [],
-  gmail: '',
-  id_order: '',
-  name: '',
-  phone: ''
-});
+  const [data, setData] = useState({
+    address: '',
+    cart: [],
+    gmail: '',
+    id_order: '',
+    name: '',
+    phone: ''
+  });
 
   useEffect(() => {
     if (localStorage.getItem("orderDetail")) {
-        setData(JSON.parse(localStorage.getItem("orderDetail")))
+      setData(JSON.parse(localStorage.getItem("orderDetail")))
     }
-}, [])
+  }, [])
 
   return (
-   <>
-    
-    <Header/>       
+    <>
 
-    <div id='final_checkout'>
+      <Header />
 
-<Container>
-<h5>Chi tiết đơn hàng</h5>
+      <div id='final_checkout'>
+      {
+        data.cart!=""  ? 
+        <Container>
+      <h5 className='text-center'>Chi tiết đơn hàng</h5>
 
-    <h6>gmail:{data.gmail}</h6>
-    <h6>name:{data.name}</h6>
-    <h6>phone:{data.phone}</h6>
+        <h6>gmail:{data.gmail}</h6>
+        <h6>name:{data.name}</h6>
+        <h6>phone:{data.phone}</h6>
 
 
-{data.cart.map((item, index) => (
+        {data.cart.map((item, index) => (
           <li key={index}>
             <p><strong>Tên sản phẩm:</strong> {item.name}</p>
             <p><strong>Giá:</strong> {item.price}</p>
           </li>
         ))}
+      
+
+
+        
+
+      
+
+        </Container>
+  :
+  <Container style={{padding:100+'px'}}>
+
+    <h5 className='text-center'>bạn chưa có đơn hàng nào !!!</h5>
+  </Container>
+      }
+
+      </div>
 
 
 
-</Container>
+      <Footer />
 
 
-
-    </div>
-
-
-
-    <Footer/>
-
-   
-   </>
+    </>
   )
 }
