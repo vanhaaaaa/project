@@ -37,8 +37,7 @@ export default function ProdFemale() {
         <>
             <Container id='container'>
                 <h1 className='text-center mt-5' >Đồng Hồ Nữ</h1>
-                <ScrollAnimation animateIn='fadeIn' initiallyVisible={true}
-                    animateOnce={true}>
+                <ScrollAnimation animateIn='fadeIn' >
                     <Row  >
                         {
                             prodMale.map((item, index) =>

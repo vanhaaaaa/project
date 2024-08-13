@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./footer.scss";
 import { Button, Col, Container, Input, Row } from 'reactstrap';
 import logo from "../../assets/logo.png"
@@ -9,11 +9,24 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import AppleIcon from '@mui/icons-material/Apple';
-export default function Footer() {
 
+export default function Footer() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition > 300) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
 
   useEffect(() => {
-   
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
   const scrollTop = () =>{   window.scrollTo({top: 0, behavior: 'smooth'});};
 
@@ -73,9 +86,11 @@ export default function Footer() {
 </Row>
 
 
-<hr/><hr/>
+<hr className='mb-0'/>
+<span className='d-flex justify-content-center ' >design by viet anh</span>
+  <hr className='m-0'/>
 
-<Button onClick={()=>scrollTop()} ><NorthIcon/></Button>
+<Button className={`hidden-element ${isVisible ? 'visible' : 'hidden'}`}  onClick={()=>scrollTop()} ><NorthIcon/></Button>
 
 
 

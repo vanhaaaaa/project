@@ -11,7 +11,7 @@ export default function Main() {
     <>
       <div id='main'>
 <Container>
-        <h3>Thương hiệu hợp tác</h3>
+        <h1>Thương hiệu hợp tác</h1>
 
 
 

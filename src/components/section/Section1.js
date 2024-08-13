@@ -1,32 +1,49 @@
 import React from 'react'
 import "./section.scss"
 import { Col, Container, Row } from 'reactstrap'
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
+import SavingsIcon from '@mui/icons-material/Savings';
+import ScrollAnimation from 'react-animate-on-scroll';
 export default function Section1() {
   return (
-    
+
     <>
-    <div id='num'>
 
-<div className='bg-overlay'></div>
-    <Container>
+      <div id='num'>
 
+        <div className='bg-overlay'></div>
+        <Container>
+        <ScrollAnimation animateIn='fadeIn' 
+          >
+          <Row>
 
+            <Col >  <span><LocalShippingIcon style={{ fontSize: 80 + 'px' }} /></span>
+              <div>
+                <h5>Miễn Phí Giao Hàng</h5>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, atque?</p>
+              </div>
+            </Col>
+            <Col>
+              <span><CardGiftcardIcon style={{ fontSize: 80 + 'px' }} /> </span>
+              <div>
+                <h5>Quà Tặng Đặc Biệt</h5>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, atque?</p>
+              </div>
+            </Col>
+            <Col> <span><SavingsIcon style={{ fontSize: 80 + 'px' }} /></span>
+              <div>
+                <h5>Tiết Kiệm Khi Mua Ở Đây</h5>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, atque?</p>
+              </div>
+            </Col>
+          </Row>
 
-<Row>
-  <Col lg={6} md={12}>
-     <img src='https://www.dangquangwatch.vn/lib/ckfinder/images/dong-ho-phien-ban-rong-an-minh4.jpg'/>
-     </Col>
-     <Col lg={6} md={12}>
-     <div className='right'>
+          </ScrollAnimation>
 
-      <h1>Thương hiệu đồng hồ Philippe Auguste ra mắt phiên bản Rồng ẩn mình</h1>
-      <p>Trong thế giới đồng hồ, Philippe Auguste không chỉ là một tên tuổi quen thuộc mà còn là biểu tượng của sự hoàn mỹ và tinh tế. Đồng hồ Philippe Auguste không chỉ là một công cụ đo giờ, mà còn là tác phẩm nghệ thuật, nơi sức mạnh của thời gian hòa mình vào vẻ đẹp cổ điển.</p>
-     </div>
-     </Col>
-     </Row>
-    </Container>
-    </div>
-    
+        </Container>
+      </div >
+
     </>
 
   )

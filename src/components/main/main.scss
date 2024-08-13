@@ -1,17 +1,31 @@
 #main{
     .container{
-        h3{
+        h1{
             color: #3c3451;
             font-size: 32px;
             font-weight: bold;
             line-height: 32px;
-            margin: 16px 0px;
+            margin-bottom: 16px;
             padding-bottom: 25px;
             position: relative;
             text-align: center;
             text-transform: uppercase;
             clear: both;
-            font-family: "Roboto Slab", serif;
+            font-family: 'Roboto Slab', serif;
+        }
+        h1::before{
+            content: '';
+         
+            background-color: var(--colorText);
+            height: 5px;
+            border-radius: 5px;
+            width: 5%;
+            position: absolute;
+            margin: 0 auto;
+            bottom:  0px;
+            left: 10px;
+            right: 10px;
+           
         }
     
         .row{
