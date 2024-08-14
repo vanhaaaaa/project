@@ -25,7 +25,7 @@
         z-index: 1;
 padding: 120px 10px;
         .row{
-
+                width: 100%;
             .col{
                 display: flex;
                 span{
@@ -39,3 +39,15 @@ padding: 120px 10px;
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+
+    #num{
+  
+        height:60vh;
+        .container{
+            padding: 20px 10px;
+        }
+  }
+  
+  }
