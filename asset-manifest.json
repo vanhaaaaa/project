@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/project/static/css/main.a78a8456.css",
+    "main.css": "/project/static/css/main.8513d733.css",
     "main.js": "/project/static/js/main.fe1e2be1.js",
     "static/media/slide2.jpg": "/project/static/media/slide2.bee3c45e5499bc949810.jpg",
     "static/media/slide3.jpg": "/project/static/media/slide3.cfe7fc0c3e9fe5ee243d.jpg",
@@ -12,11 +12,11 @@
     "static/media/logo_gshock.png": "/project/static/media/logo_gshock.f20cdc336618d8dfd357.png",
     "static/media/logo_olym.png": "/project/static/media/logo_olym.2197ca0a64cceaeeeab6.png",
     "index.html": "/project/index.html",
-    "main.a78a8456.css.map": "/project/static/css/main.a78a8456.css.map",
+    "main.8513d733.css.map": "/project/static/css/main.8513d733.css.map",
     "main.fe1e2be1.js.map": "/project/static/js/main.fe1e2be1.js.map"
   },
   "entrypoints": [
-    "static/css/main.a78a8456.css",
+    "static/css/main.8513d733.css",
     "static/js/main.fe1e2be1.js"
   ]
 }
