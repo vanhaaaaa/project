@@ -1,8 +1,8 @@
 #footer {
-    height: 35Vh;
+
     background-color: black;
     color: #a4a4a4;
-    padding-top: 30px;
+    padding: 30px 0px;
     
     .form_footer {
         border: 1px dashed rgb(177, 177, 177);
@@ -79,12 +79,3 @@
         
     }
 }
-@media screen and (max-width: 600px) {
-
-    #footer{
-  
-        height:100vh;
-  
-  }
-  
-  }

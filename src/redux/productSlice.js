@@ -18,7 +18,7 @@ export const fetchApi = createAsyncThunk('products/fetchApi', async (page) => {
 });
 
 export const prodMaleL = createAsyncThunk('products/prodMaleL', async () => {
-    const responve = await axios.get(`${url}`);
+    const responve = await axios.get(url);
     return responve.data;
 });
 
