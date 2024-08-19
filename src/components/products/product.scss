@@ -1,5 +1,19 @@
 
- 
+ .col-form-label:nth-child(1){
+    width: 4%;
+ }
+ .col-form-label:nth-last-child(2){
+    width: 9%;
+    padding: 6px 0px;
+ }
+     
+      .form-select:focus{
+  box-shadow: none;
+      }
+    
+   
+
+
 .swal2-popup{
 
     

@@ -1,17 +1,66 @@
 
 .form_login{
-
+background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXRsxZSzuP_mytMKINv9Yp1Rj3WJ10_aSbUQ&s');
+    background-size: cover;
+background-position: center center;
+padding-top: 100px;
+    height: 100vh;
     form{
+      background: transparent;
+      backdrop-filter: blur(30px);
         padding: 5%;
-        border: 1px solid gray;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
         border-radius: 5px;
 
         text-align: center;
         width: 50%;
-        margin: 50px auto;
+        margin: 0px auto;
+        .MuiFormControl-root{
+            margin: 10px 0px;
+            &:focus{
+                outline-style: none;
+               
+            }
+        }
+        label{
+            font-size: 20px;
+        }
         input{
             width: 100%;
-            margin: 0 auto;
+            margin: 5px auto ;
+            font-size: 20px;
+            outline: none;
+            border: none;
+            transition: 1s;
+            &:focus{
+                box-shadow: none;
+       
+            }
+        }
+        button{
+           
+            margin-right: 10px;
+            border-radius: 0px;
+            background: transparent;
+            backdrop-filter: blur(10px);
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .icon_home{
+            width: 50px;
+            height: 50px;
+            margin: 30px auto 0px auto;
+            border: 1px solid white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
         }
     }
 }

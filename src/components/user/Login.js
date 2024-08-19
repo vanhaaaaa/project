@@ -8,7 +8,8 @@ import { Button, Container, Input } from 'reactstrap';
 import './style.scss';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-
+import { TextField } from '@mui/material';
+import HomeSharpIcon from '@mui/icons-material/HomeSharp';
 const Login = () => {
   const navigate = useNavigate()
   const [email, setEmail] = useState('');
@@ -62,7 +63,7 @@ const Login = () => {
       <div className='form_login'>
         {
           user != null ?
-            <Container className='mt-2'>
+            <Container>
               <h1>
                 xin chao
               </h1>
@@ -77,28 +78,35 @@ const Login = () => {
            
 
               <form onSubmit={handleLogin}>
-              <h4>login</h4>
-                <label>
-                  Email:
-                  <Input
+              <h2>login</h2>
+             
+                  <TextField 
+                  label="email"
+                  variant="standard"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                   />
-                </label><br/>
-                <label>
-                  Password:
-                  <Input
+               <br/>
+              
+                  <TextField
+                      label="password"
                     type="password"
+                    variant="standard"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                   />
-                </label><br/>
+              <br/>
+              <div className='mt-4'>
                 <Button type="submit">Login</Button>
                 {error && <p>{error}</p>}
                 <Link to={'/register'}>register</Link>
+                </div>
+                <div className='icon_home'>
+                <Link to={'/'}><HomeSharpIcon/></Link>
+                </div>
               </form>
             </Container>
         }

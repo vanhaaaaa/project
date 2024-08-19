@@ -12,9 +12,22 @@ const initialState = {
     totalPage: 30
 };
 const url = 'https://66a0a2837053166bcabc1470.mockapi.io/product';
-export const fetchApi = createAsyncThunk('products/fetchApi', async (page) => {
-    const responve = await axios.get(`${url}?page=${page}&&limit=6`);
-    return responve.data;
+export const fetchApi = createAsyncThunk('products/fetchApi', async ({page,item,sortOrder}) => {
+    const responve = await axios.get(`${url}?page=${page}&&limit=${item}`);
+    const data = responve.data;
+    const sortedData = data.sort((a, b) => {
+        if (sortOrder === 'asc') {
+            return a.price - b.price;
+        } else if  (sortOrder === 'desc') {
+            return b.price - a.price;
+        }else{
+            return 0;
+        }
+       
+    });
+
+    return sortedData;
+    
 });
 
 export const prodMaleL = createAsyncThunk('products/prodMaleL', async () => {

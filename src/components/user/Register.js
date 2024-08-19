@@ -5,8 +5,9 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 import { Navigate, useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
-import { Button, Input } from 'reactstrap';
-
+import { Button, Container, Input } from 'reactstrap';
+import { TextField } from '@mui/material';
+import HomeSharpIcon from '@mui/icons-material/HomeSharp';
 const Register = () => {
   const navigete=useNavigate()
   const [email, setEmail] = useState('');
@@ -30,31 +31,39 @@ const Register = () => {
   return (
     
     <div className='form_login'>
-     
+     <Container>
       <form onSubmit={handleRegister}>
       <h2>Register</h2>
-        <label>
-          Email:
-          <Input
+       
+          <TextField
+            label="email"
+            variant="standard"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-        </label><br/>
-        <label>
-          Password:
-          <Input
+      <br/>
+      
+          <TextField
+          label="password"
+          variant="standard"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-        </label><br/>
+      <br/>
+      <div className='mt-4'>
         <Button type="submit">Register</Button>
         <Link to={'/login'}>login</Link>
+        </div>
+        <div className='icon_home'>
+        <Link to={'/'}><HomeSharpIcon/></Link>
+        </div>
       </form>
       {error && <p>{error}</p>}
+      </Container>
     </div>
   );
 };
