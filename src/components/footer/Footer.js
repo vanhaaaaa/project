@@ -60,7 +60,7 @@ export default function Footer() {
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ad.</p>
 <div className='ip_footer'>
     <Input type='text' />
-    <span><SearchIcon /></span>
+    <span>-></span>
     </div>
     <p className='mt-2'>hãy gửi phản hồi vủa bạn về chúng tôi</p>
 </Col>

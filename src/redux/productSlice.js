@@ -12,10 +12,13 @@ const initialState = {
     totalPage: 30
 };
 const url = 'https://66a0a2837053166bcabc1470.mockapi.io/product';
-export const fetchApi = createAsyncThunk('products/fetchApi', async ({page,item,sortOrder}) => {
+export const fetchApi = createAsyncThunk('products/fetchApi', async ({page,item,sortOrder,range}) => {
     const responve = await axios.get(`${url}?page=${page}&&limit=${item}`);
     const data = responve.data;
-    const sortedData = data.sort((a, b) => {
+    const filteredData = data.filter(product =>
+        product.price >= range[0] && product.price <= range[1]
+      );
+    const sortedData = filteredData.sort((a, b) => {
         if (sortOrder === 'asc') {
             return a.price - b.price;
         } else if  (sortOrder === 'desc') {

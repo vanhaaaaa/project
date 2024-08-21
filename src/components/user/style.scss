@@ -1,13 +1,16 @@
 
 .form_login{
-background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXRsxZSzuP_mytMKINv9Yp1Rj3WJ10_aSbUQ&s');
+    h2{
+        color: var(--colorBg);
+    }
+background-image: url('../../assets/slide1.jpg');
     background-size: cover;
 background-position: center center;
 padding-top: 100px;
     height: 100vh;
     form{
       background: transparent;
-      backdrop-filter: blur(30px);
+      backdrop-filter: blur(60px);
         padding: 5%;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
         border-radius: 5px;
@@ -24,12 +27,14 @@ padding-top: 100px;
         }
         label{
             font-size: 20px;
+            color:  var(--colorBg);
         }
         input{
             width: 100%;
             margin: 5px auto ;
             font-size: 20px;
             outline: none;
+            color: var(--colorText);
             border: none;
             transition: 1s;
             &:focus{
@@ -46,8 +51,8 @@ padding-top: 100px;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
         a{
-            color: white;
-            text-decoration: none;
+            color: var(--colorText);
+         
             font-size: 16px;
         }
 

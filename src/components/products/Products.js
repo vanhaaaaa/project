@@ -11,6 +11,9 @@ import logo_orient from "../../assets/logo_orient.png"
 import logo_tissot from "../../assets/logo_tissot.png"
 import ArrowDropDownCircleSharpIcon from '@mui/icons-material/ArrowDropDownCircleSharp';
 import './product.scss';
+import MinimumDistanceSlider from './Slider';
+import { Slider } from '@mui/material';
+
 
 export default function Products() {
   const dispatch = useDispatch();
@@ -20,14 +23,22 @@ export default function Products() {
   const [selectedValue, setSelectedValue] = useState(6);
   const [sortOrder, setSortOrder] = useState('');
   const { items } = useSelector(state => state.products)
-
+  const marks = [
+    { value: 0, label: 'min' },
+    { value: 5_000_000, label: '5 trieu' },
+    { value: 10_000_000, label: '10 trieu' },
+    { value: 15_000_000, label: '15 trieu' },
+    { value: 25_000_000, label: 'max' },
+  ];
+  const valuetext = (value) => `${value}`;
+  const [value1, setValue1] = useState([0, 25_000_000]);
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    dispatch(fetchApi({ page: currentPage, item: selectedValue, sortOrder: sortOrder }));
+    dispatch(fetchApi({ page: currentPage, item: selectedValue, sortOrder: sortOrder,    range: value1 }));
 
 
 
-  }, [currentPage, selectedValue, sortOrder]);
+  }, [currentPage, selectedValue, sortOrder,value1]);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -53,10 +64,18 @@ export default function Products() {
   const handleSortPrice = (event) => {
     const order = event.target.value;
     setSortOrder(order);
-
+    setCurrentPage(1);
 
 
   };
+
+
+  const handleChange1 = (event, newValue) => {
+    setValue1(newValue);
+    setSelectedValue(20);
+    setSortOrder('desc');
+  };
+
   return (
     <>
 
@@ -98,7 +117,20 @@ export default function Products() {
                 </Nav>
               </Collapse>
             </Navbar>
-
+            <h5>Giá</h5>
+            <Slider
+        getAriaLabel={() => 'Minimum distance'}
+        value={value1}
+        onChange={handleChange1}
+        valueLabelDisplay="auto"
+        getAriaValueText={valuetext}
+        disableSwap
+        min={0} // Minimum value of the slider
+        max={25_000_000} // Maximum value of the slider
+        // You can use `step` if needed; for a range slider, `step` is often set to `null`
+        step={null} 
+        marks={marks}
+      />
           </Col>
 
           <Col lg={9} md={9}  >

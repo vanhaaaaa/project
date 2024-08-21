@@ -1,6 +1,9 @@
-#main{
-    .container{
-        h1{
+#main {
+    overflow: hidden;
+    padding-bottom: 5px;
+
+    .container {
+        h1 {
             color: #3c3451;
             font-size: 32px;
             font-weight: bold;
@@ -13,43 +16,60 @@
             clear: both;
             font-family: 'Roboto Slab', serif;
         }
-        h1::before{
+
+        h1::before {
             content: '';
-         
+
             background-color: var(--colorText);
             height: 5px;
             border-radius: 5px;
             width: 5%;
             position: absolute;
             margin: 0 auto;
-            bottom:  0px;
+            bottom: 0px;
             left: 10px;
             right: 10px;
-           
+
         }
-    
-        .row{
+
+        .row {
             display: flex;
             justify-content: space-around;
+            position: relative;
+            animation: example linear infinite alternate 3s;
 
-            .col-lg-2{
-                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+
+
+
+            .col-lg-2 {
+               
                 text-align: center;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 height: 130px;
-                
+
             }
         }
-    
-       
-                img{
-                    width: 80%;
-                  
-                }
-    }
-   
-       
-}
 
+        @keyframes example {
+
+            0% {
+                transform: translateX(-200px);
+            }
+
+            100% {
+                transform: translateX(200px);
+            }
+
+        }
+
+        img {
+            width: 60%;
+
+        }
+    }
+
+
+}
