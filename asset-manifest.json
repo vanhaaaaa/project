@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/project/static/css/main.6dcd8b45.css",
-    "main.js": "/project/static/js/main.504a1e7b.js",
+    "main.css": "/project/static/css/main.0918c5f2.css",
+    "main.js": "/project/static/js/main.130e529d.js",
     "static/media/slide2.jpg": "/project/static/media/slide2.bee3c45e5499bc949810.jpg",
     "static/media/slide3.jpg": "/project/static/media/slide3.cfe7fc0c3e9fe5ee243d.jpg",
     "static/media/slide1.jpg": "/project/static/media/slide1.d86ac89378713ebbf642.jpg",
@@ -11,12 +11,16 @@
     "static/media/logo_citizen.png": "/project/static/media/logo_citizen.ff56bfdc01740425def2.png",
     "static/media/logo_gshock.png": "/project/static/media/logo_gshock.f20cdc336618d8dfd357.png",
     "static/media/logo_olym.png": "/project/static/media/logo_olym.2197ca0a64cceaeeeab6.png",
+    "static/media/slick.svg": "/project/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/project/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/project/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/project/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/project/index.html",
-    "main.6dcd8b45.css.map": "/project/static/css/main.6dcd8b45.css.map",
-    "main.504a1e7b.js.map": "/project/static/js/main.504a1e7b.js.map"
+    "main.0918c5f2.css.map": "/project/static/css/main.0918c5f2.css.map",
+    "main.130e529d.js.map": "/project/static/js/main.130e529d.js.map"
   },
   "entrypoints": [
-    "static/css/main.6dcd8b45.css",
-    "static/js/main.504a1e7b.js"
+    "static/css/main.0918c5f2.css",
+    "static/js/main.130e529d.js"
   ]
 }
