@@ -5,7 +5,9 @@ import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import SavingsIcon from '@mui/icons-material/Savings';
 import ScrollAnimation from 'react-animate-on-scroll';
+import { useTranslation } from 'react-i18next';
 export default function Section1() {
+  const { t } = useTranslation("translation");
   return (
 
     <>
@@ -20,20 +22,20 @@ export default function Section1() {
 
             <Col >  <span><LocalShippingIcon style={{ fontSize: 80 + 'px' }} /></span>
               <div>
-                <h5>Miễn Phí Giao Hàng</h5>
+                <h5>{t("Free Shipping")}</h5>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, atque?</p>
               </div>
             </Col>
             <Col>
               <span><CardGiftcardIcon style={{ fontSize: 80 + 'px' }} /> </span>
               <div>
-                <h5>Quà Tặng Đặc Biệt</h5>
+                <h5>{t("Special Gifts")}</h5>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, atque?</p>
               </div>
             </Col>
             <Col> <span><SavingsIcon style={{ fontSize: 80 + 'px' }} /></span>
               <div>
-                <h5>Tiết Kiệm Khi Mua Ở Đây</h5>
+                <h5>{t("Save When You Buy Here")}</h5>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, atque?</p>
               </div>
             </Col>

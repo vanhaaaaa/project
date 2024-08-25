@@ -4,6 +4,7 @@ import Footer from '../../components/footer/Footer'
 import { Button, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap'
 import './contact.scss';
 import logo from '../../assets/logo.png'
+import { TextField } from '@mui/material';
 export default function Contact() {
   document.title = "AW Contact"
   return (
@@ -14,56 +15,36 @@ export default function Contact() {
         <Container >
 
 
-          <img src={logo} />
+          <img src={logo}  />
 
-    <h4>hay gui phan hoi cua ban ve chung toi</h4>
+    <h4>hãy gửi phản hồi của bạn về chúng tôi</h4>
           <Form>
             <Row>
-              <Col md={6}>
-                <FormGroup>
-                  <Label for="exampleEmail">
-                    Email
-                  </Label>
-                  <Input
-                    id="exampleEmail"
-                    name="email"
-                    placeholder="email"
-                    type="email"
-                  />
-                </FormGroup>
-              </Col>
-              <Col md={6}>
-                <FormGroup>
-                  <Label for="examplePassword">
-                    Tên của bạn
-                  </Label>
-                  <Input
-                    id="examplePassword"
-                    name="password"
-                    placeholder="ten cua ban"
-                    type="text"
-                  />
-                </FormGroup>
+              <Col md={6} className='p-5'>
+              
+      
+                  <TextField id="standard-basic" className='w-100'  color="warning" label="email" variant="standard" />
+              </Col >
+              <Col md={6} className='p-5'>
+              <TextField id="standard-basic" className='w-100'  color="warning" label="phone"  variant="standard" />
               </Col>
 
-              <Col>
-                <FormGroup>
-                  <Label for="exampleCity">
-                  noi dung
-                  </Label>
-                  <Input
-                    id="exampleCity"
-                    name="city"
-                    type='textarea'
-                  />
-                </FormGroup>
+              <Col md={12}>
+              <TextField
+              className='w-100 mt-4'   color="warning"
+          id="outlined-multiline-static"
+          label="nôị dung"
+          multiline
+          rows={4}
+    
+        />
               </Col>
 
 
             </Row>
 
             <Button>
-          gui 
+       gửi 
             </Button>
           </Form>
 

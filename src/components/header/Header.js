@@ -27,6 +27,9 @@ import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import SearchIcon from '@mui/icons-material/Search';
 import { useSelector } from 'react-redux';
 import Menu from './Menu';
+import Lang from './Lang';
+import { useTranslation } from 'react-i18next';
+
 
 
 
@@ -41,7 +44,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 
 export default function Header() {
-
+  const { t } = useTranslation("translation");
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -144,18 +147,18 @@ export default function Header() {
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="me-auto" navbar>
-              <NavItem>
-                <Link to={"/"}>Trang chủ </Link>
-              </NavItem>
-              <NavItem>
-                <Link to={"/products"}>sản phẩm </Link>
-              </NavItem>
-              <NavItem >
-                <Link to={"/about"}>giới thiệu </Link>
-              </NavItem>
-              <NavItem >
-                <Link to={"/contact"}> liên hệ  </Link>
-              </NavItem>
+            <NavItem>
+                <Link to={"/"}>{t('home')}</Link>
+            </NavItem>
+            <NavItem>
+                <Link to={"/products"}>{t('products')}</Link>
+            </NavItem>
+            <NavItem>
+                <Link to={"/about"}>{t('about')}</Link>
+            </NavItem>
+            <NavItem>
+                <Link to={"/contact"}>{t('contact')}</Link>
+            </NavItem>
 
             </Nav>
 
@@ -168,8 +171,8 @@ export default function Header() {
               <Input type='text' placeholder='ban muon mua gi?' />
               <span><SearchIcon /></span>
             </div>
-            <div>
-              <Link to={"/cart"}>
+            <div className='d-flex align-items-center justify-content-around'>
+              <Link to={"/cart"} className='mx-auto'>
               <IconButton aria-label="cart" color="light">
                 <StyledBadge badgeContent={cart.length} color="white">
                   <ShoppingCartIcon />
@@ -179,9 +182,11 @@ export default function Header() {
               </Link>
 
              
-            </div>
+          
+           
             <Menu/>
-
+<Lang/>
+</div>
           </Collapse>
 
 

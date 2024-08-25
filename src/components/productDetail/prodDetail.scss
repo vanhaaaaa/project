@@ -1,6 +1,13 @@
 #prod_detail {
     padding: 0px 10%;
 
+    .prod_TT{
+        button{
+            background-color: black;
+            border-radius: 50px;
+        }
+    }
+
     .row {
         .prod_left {
             display: flex;

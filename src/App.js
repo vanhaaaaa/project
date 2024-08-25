@@ -2,7 +2,7 @@ import {  HashRouter, Route, Router, Routes } from "react-router-dom";
 import Home from "./pages/home/Home";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from "reactstrap";
+
 import Product from "./pages/products/Product";
 
 import ProdDetail from "./pages/productDetail/ProdDetail";
@@ -31,7 +31,7 @@ function App() {
 <Routes>
   <Route index element={<Home />}></Route>
   <Route path="/products" element={<Product />}></Route>
-  <Route path="/detail/:id" element={<ProdDetail />}></Route>
+  <Route path="/detail/:id/:brand" element={<ProdDetail />}></Route>
   <Route path="/cart" element={<Cart />}></Route>
   <Route path="/contact" element={<Contact />}></Route>
   <Route path="/About" element={<About />}></Route>

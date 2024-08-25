@@ -36,12 +36,7 @@
             display: flex;
             justify-content: space-around;
             position: relative;
-            animation: example linear infinite alternate 3s;
-
-
-
-
-
+            animation: example linear infinite alternate-reverse 3s;
             .col-lg-2 {
                
                 text-align: center;

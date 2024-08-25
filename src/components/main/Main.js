@@ -7,12 +7,14 @@ import logo_orient from "../../assets/logo_orient.png"
 import logo_tissot from "../../assets/logo_tissot.png"
 import { Col, Container, Row } from 'reactstrap'
 import ScrollAnimation from 'react-animate-on-scroll'
+import { useTranslation } from 'react-i18next';
 export default function Main() {
+  const { t } = useTranslation("translation");
   return (
     <>
       <div id='main'>
 <Container>
-        <h1>Thương hiệu hợp tác</h1>
+        <h1>{t('Collaborative brand')}</h1>
 
         <ScrollAnimation animateIn='fadeIn'   animateOut='fadeOut' delay={100} >
 
@@ -22,6 +24,7 @@ export default function Main() {
           <Col   lg={2} md={3} xs={6}><img src={logo_orient} /></Col>
           <Col  lg={2} md={3} xs={6}><img src={logo_sitizen} /></Col>
           <Col  lg={2} md={3} xs={6}><img src={logo_tissot} /></Col>
+          
         </Row>
 
         </ScrollAnimation>

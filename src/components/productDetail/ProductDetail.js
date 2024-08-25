@@ -1,17 +1,28 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router';
-import { Button, Col, Container, Input, Row, Table } from 'reactstrap';
-import './prodDetail.scss';
+import { Button, Card, CardBody, CardSubtitle, CardTitle, Col, Container, Input, Row, Table } from 'reactstrap';
+
 import { useDispatch } from 'react-redux';
 import { addCart } from '../../redux/cartSlice';
 import Swal from 'sweetalert2';
-import { LocalDining } from '@mui/icons-material';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Link } from 'react-router-dom';
 
+import './prodDetail.scss';
+import Slider from 'react-slick';
 export default function ProductDetail() {
     const navigate = useNavigate();
-    const { id } = useParams()
+    const { id, brand } = useParams()
     const [data, setData] = useState({})
+
+
+    const productde =
+    localStorage.getItem("productde") !== null
+        ? JSON.parse(localStorage.getItem("productde"))
+        : [];
+    const [dataTT, setDataTT] = useState([productde])
     const [imgSp, setImgSp] = useState(data.img)
     const [quantity, setQuantity] = useState(1)
     const dispatch = useDispatch();
@@ -27,9 +38,25 @@ export default function ProductDetail() {
             })
     }
 
+
+
     useEffect(() => {
         fetchData();
-    }, [])
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        fetch('https://66a0a2837053166bcabc1470.mockapi.io/product/')
+            .then(response => response.json())
+            .then(data => {
+                // Lọc sản phẩm theo thương hiệu từ URL
+                const filteredProducts = data.filter(product => product.brand == brand);
+                
+                setDataTT(filteredProducts);
+                localStorage.setItem("productde", JSON.stringify(filteredProducts))
+
+            })
+            .catch(function (error) {
+                console.log(error)
+            })
+    }, [id])
 
 
     const addQuantity = (e) => {
@@ -50,9 +77,9 @@ export default function ProductDetail() {
         dispatch(addCart({ ...data, quantity: quantity }));
 
         let timerInterval;
-     
+
         Swal.fire({
-            
+
             title: "đợi 1 chút nhé!",
             html: "đang tới trang thanh toán",
             timer: 1000,
@@ -66,10 +93,10 @@ export default function ProductDetail() {
                 clearInterval(timerInterval);
             }
         }).then(() => {
-           
+
             navigate("/cart")
         });
-        
+
     }
     return (
         <>
@@ -125,85 +152,158 @@ export default function ProductDetail() {
                 </Row>
 
 
-            <h5 className='mt-2'>Thông tin bổ sung</h5>
+                <h5 className='mt-2'>Thông tin bổ sung</h5>
 
-            <Table
+                <Table
 
-  responsive
+                    responsive
 
->
-  <thead>
-    <tr>
-    <td>
-  1
-      </td>
-      <th>
-       
-Bộ máy & Năng lượng
-      </th>
-    
-      <td>
-      Năng Lượng Ánh Sáng
-      </td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-    <td>
-    2
-      </td>
-      <th scope="row">
-      Chất liệu dây
-      </th>
-     
-      <td>
-      Dây Vải
-      </td>
-     
-    </tr>
-    <tr>
-    <td>
-     3
-      </td>
-      <th scope="row">
-      Chất liệu mặt kính
-      </th>
-    
-      <td>
-      Kính Sapphire
-      </td>
-      
-    </tr>
-    <tr>
-     
-      <td>
-     4
-      </td>
-      <th scope="row">
-      Giới tính
-      </th>
-      <td>
-      {data.sex}
-      </td>
-    
-    </tr>
-    <tr>
-    <td>
-     5
-      </td>
-      <th scope="row">
-      Kích thước mặt số
-      </th>
-    
-      <td>
-      40 – 43 mm
-      </td>
-    
-    </tr>
-  </tbody>
-</Table>
+                >
+                    <thead>
+                        <tr>
+                            <td>
+                                1
+                            </td>
+                            <th>
+
+                                Bộ máy & Năng lượng
+                            </th>
+
+                            <td>
+                                Năng Lượng Ánh Sáng
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                2
+                            </td>
+                            <th scope="row">
+                                Chất liệu dây
+                            </th>
+
+                            <td>
+                                Dây Vải
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                3
+                            </td>
+                            <th scope="row">
+                                Chất liệu mặt kính
+                            </th>
+
+                            <td>
+                                Kính Sapphire
+                            </td>
+
+                        </tr>
+                        <tr>
+
+                            <td>
+                                4
+                            </td>
+                            <th scope="row">
+                                Giới tính
+                            </th>
+                            <td>
+                                {data.sex}
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                5
+                            </td>
+                            <th scope="row">
+                                Kích thước mặt số
+                            </th>
+
+                            <td>
+                                40 – 43 mm
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </Table>
+
+                <div className='prod_TT'> 
+                    <h3>Sản phẩm tương tự </h3>
+
+                    <Slider slidesToScroll={1} slidesToShow={3}   infinite= {true} dots={true} speed={500} responsive={[{
+  breakpoint: 800,
+  settings: {
+    slidesToShow: 3,
+    slidesToScroll: 3
+  }
+}, {
+  breakpoint: 500,
+  settings: {
+    slidesToShow: 2,
+    slidesToScroll: 2
+  }
+}]}>
+
+                        {
+                            dataTT.map((itemsS, index) => (
+                                <div key={index} >
+                                    <Link to={`/detail/${itemsS.id}/${itemsS.brand}`} className='add_prod z-index' >
+                                  
+                                            <Card className='TTsp m-2 z-10' >
+
+                                                <div className='card_img' >
+                                                    <img
+                                                        alt="Sample"
+                                                        src={itemsS.img}
+                                                    />
+                                                </div>
+                                                <CardBody className=''>
+
+                                                    <CardSubtitle
+                                                        className="  text-muted  text-uppercase fw-light"
+                                                        tag="h6"
+                                                    >
+                                                        {itemsS.sex}
+                                                    </CardSubtitle>
+                                                    <CardTitle className='' tag="h6">
+                                                        {itemsS.name}
+
+                                                    </CardTitle>
+
+                                                    <CardSubtitle
+                                                        className=" text-muted mt-2"
+                                                        tag="h6"
+                                                    >
+                                                        {new Intl.NumberFormat("en-US").format(itemsS.price)}
+
+                                                        ₫
+                                                    </CardSubtitle>
+                                                    <Link>
+                                                        <div className='btn_add'>
+
+                                                        </div>
+                                                    </Link>
+                                                </CardBody>
+
+                                            </Card>
+
+                                      
+                                    </Link>
 
 
+
+                                </div>
+                            ))
+                        }
+
+
+
+
+                    </Slider>
+                </div>
 
             </Container>
 

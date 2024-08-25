@@ -4,6 +4,7 @@ import Footer from '../../components/footer/Footer'
 import { Col, Container, Row } from 'reactstrap'
 import './about.scss'
 export default function About() {
+      document.title = "AW About"
     return (
         <>
             <Header />

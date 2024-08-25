@@ -8,7 +8,9 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import { Link } from 'react-router-dom';
 import { addCart } from '../../redux/cartSlice';
 import Swal from 'sweetalert2';
+import { useTranslation } from 'react-i18next';
 export default function ProdFemale() {
+    const { t } = useTranslation("translation");
     const dispatch = useDispatch();
     const { items } = useSelector(state => state.products)
     useEffect(() => {
@@ -36,13 +38,13 @@ export default function ProdFemale() {
     return (
         <>
             <Container id='container'>
-                <h1 className='text-center mt-5' >Đồng Hồ Nữ</h1>
+                <h1 className='text-center mt-5' >{t("Women's Watches")}</h1>
                 <ScrollAnimation animateIn='fadeIn' >
                     <Row  >
                         {
                             prodMale.map((item, index) =>
                                 <Col xs={6} sm={6} md={4} lg={3} key={index} >
-                                    <Link to={`/detail/${item.id}`} className='add_prod' >
+                                    <Link to={`/detail/${item.id}/${item.brand}`} className='add_prod' >
                                         <Card className='TTsp'>
                                             <div className='card_img' >
                                                 <img height={"100%"}
@@ -56,7 +58,7 @@ export default function ProdFemale() {
                                                     className="mb-2 text-muted text-uppercase fw-light "
                                                     tag="h6"
                                                 >
-                                                    Đồng Hồ Nữ
+                                                   {t("Women's Watches")}
                                                 </CardSubtitle>
                                                 <CardTitle tag="h5">
                                                     {item.name}

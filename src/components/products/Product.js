@@ -30,7 +30,7 @@ export default function Product(props) {
 
 
             <Col lg={4} md={6} xs={6} >
-            <Link to={`/detail/${item.id}` } className='add_prod' > 
+            <Link to={`/detail/${item.id}/${item.brand}` } className='add_prod' > 
                 <ScrollAnimation animateIn='flipInY' initiallyVisible={true}
                     animateOnce={true}>
                     <Card className='TTsp'>
