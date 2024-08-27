@@ -172,7 +172,7 @@ export default function Header() {
               <span><SearchIcon /></span>
             </div>
             <div className='d-flex align-items-center justify-content-around'>
-              <Link to={"/cart"} className='mx-auto'>
+              <Link to={"/cart"} >
               <IconButton aria-label="cart" color="light">
                 <StyledBadge badgeContent={cart.length} color="white">
                   <ShoppingCartIcon />
