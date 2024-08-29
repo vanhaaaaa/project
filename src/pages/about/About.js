@@ -1,24 +1,27 @@
 import React from 'react'
-import Header from '../../components/header/Header'
-import Footer from '../../components/footer/Footer'
+
+
 import { Col, Container, Row } from 'reactstrap'
-import './about.scss'
+import style from './about.module.scss';
+import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
+
 export default function About() {
       document.title = "AW About"
     return (
         <>
             <Header />
 
-            <div id='about'>
-            <Container>
+            <div id={style.about}>
+            <Container className={style.container}>
                         <h2 className='text-center'>Tin Tức && Sự kiện</h2>
 
                 <Row>
 
 
                     <Col lg={6} md={12}>
-                    <div className='about_img'>
-                        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMIdj7JmVS0zzpOhbexHPGsJuQ2cs0gEiPBg&usqp=CAU'/>
+                    <div className={style.about_img}>
+                        <img style={style.img} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMIdj7JmVS0zzpOhbexHPGsJuQ2cs0gEiPBg&usqp=CAU'/>
                         </div>
                     </Col>
                     <Col lg={6} md={12}>
