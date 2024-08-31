@@ -206,6 +206,9 @@ export default function Header() {
               next={next}
               previous={previous}
               fade={true}
+              autoPlay={true}
+              interval={3000}
+        
             >
               <CarouselIndicators
                 items={items}
